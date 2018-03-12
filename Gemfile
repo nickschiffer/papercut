@@ -34,6 +34,9 @@ gem 'jquery-rails'
 #Add autoprefixer-rails to deal with vendor paths
 gem 'autoprefixer-rails', '~> 8.0'
 
+# Add devise for user authentification
+gem 'devise', '~> 4.2'
+
 #Font Awesome
 gem 'font-awesome-sass'
 # Use Redis adapter to run Action Cable in production

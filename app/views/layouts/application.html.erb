@@ -3,12 +3,32 @@
   <head>
     <title>Papercut</title>
     <%= csrf_meta_tags %>
+    
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
   </head>
+  <!-- <ul class="hmenu">
+  <%= render 'devise/menu/registration_items' %>
+  <%= render 'devise/menu/login_items' %>
+  </ul> -->
+  <nav class="navbar navbar-light bg-light static-top">
+      <div class="container">
+        <!-- <a class="navbar-brand" href="#">papercut</a> -->
+        <%= link_to('papercut', root_path, class: 'navbar-brand') %>
+        <!-- <a class="btn btn-primary" href="#devise/sessions#create"> Sign In</a> -->
+        <%= render 'devise/menu/registration_items' %>
+  		<%= render 'devise/menu/login_items' %>
+        
+      </div>
+  </nav>
 
   <body>
-    <%= yield %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>	
+  <%= yield %>
   </body>
 </html>
