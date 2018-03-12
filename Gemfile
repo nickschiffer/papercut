@@ -31,6 +31,8 @@ gem 'bootstrap', '~> 4.0.0'
 
 # Add jquery-rails
 gem 'jquery-rails'
+#Add autoprefixer-rails to deal with vendor paths
+gem 'autoprefixer-rails', '~> 8.0'
 
 #Font Awesome
 gem 'font-awesome-sass'
