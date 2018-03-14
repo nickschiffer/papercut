@@ -38,7 +38,7 @@
   </div>
 <% end %>
 <div class = "title">
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-sm btn-danger btn-block" %></p>
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure? This can't be undone." }, method: :delete, :class => "btn btn-sm btn-danger btn-block" %></p>
 </div>
 </body>
 
