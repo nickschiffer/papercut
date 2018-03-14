@@ -15,3 +15,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 Rails.application.config.assets.precompile += %w( devise.css )
 Rails.application.config.assets.precompile += %w( landing-page.min.css )
+Rails.application.config.assets.precompile += %w( alerts.css )
