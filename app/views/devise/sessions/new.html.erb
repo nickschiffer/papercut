@@ -1,5 +1,8 @@
+<div class="title">
 <h2>Log in</h2>
-
+</div>
+<body class="text-center">
+<%= stylesheet_link_tag 'devise' %>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
@@ -19,8 +22,12 @@
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", :class => "btn btn-lg btn-primary btn-block"%>
   </div>
 <% end %>
+ </div>
 
-<%= render "devise/shared/links" %>
+<div class="links">
+<%= render "devise/shared/links", :style => "margin: 0 auto;" %>
+</div>
+</body>
