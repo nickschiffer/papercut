@@ -38,6 +38,9 @@ gem 'devise', '~> 4.2'
 
 #Font Awesome
 gem 'font-awesome-sass'
+
+#Friendly ID
+gem 'friendly_id', '~> 5.2', '>= 5.2.3'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
