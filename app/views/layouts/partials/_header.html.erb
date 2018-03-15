@@ -1,0 +1,46 @@
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom fonts for this template -->
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/landing-page.min.css" rel="stylesheet">
+    <%= stylesheet_link_tag 'alerts' %>
+
+    
+  <!-- Header -->
+  </head>
+  <!-- <ul class="hmenu">
+  <%= render 'devise/menu/registration_items' %>
+  <%= render 'devise/menu/login_items' %>
+  </ul> -->
+  
+
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary justify-content-between">
+    <a href="<%= root_path %>">
+      <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ2OC4yOTMgNDY4LjI5MyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDY4LjI5MyA0NjguMjkzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPHBhdGggc3R5bGU9ImZpbGw6I0U1NjM1MzsiIGQ9Ik01MS4wNiw0NTQuNDQ2SDB2LTQ0MC42aDUxLjA2YzEzLjc4NiwwLDI0Ljk2MSwxMS4xNzUsMjQuOTYxLDI0Ljk2MXYzOTAuNjc4ICBDNzYuMDIxLDQ0My4yNzEsNjQuODQ2LDQ1NC40NDYsNTEuMDYsNDU0LjQ0NnoiLz4KPGc+Cgk8cmVjdCB4PSI3Ni4wMiIgeT0iMTIxLjQ4OCIgc3R5bGU9ImZpbGw6IzY0Nzk4QTsiIHdpZHRoPSI5Mi4xNDgiIGhlaWdodD0iNDUuMDUiLz4KCTxyZWN0IHg9Ijc2LjAyIiB5PSIzMDEuNzU1IiBzdHlsZT0iZmlsbDojNjQ3OThBOyIgd2lkdGg9IjkyLjE0OCIgaGVpZ2h0PSI0NS4wNSIvPgo8L2c+CjxwYXRoIHN0eWxlPSJmaWxsOiNENUQ2REI7IiBkPSJNNDM3LjI1LDQwOS40NjFIMTU5LjcyVjU2LjA4aDI3Ny41M2MxNy4xNDQsMCwzMS4wNDIsMTMuODk4LDMxLjA0MiwzMS4wNDJ2MjkxLjI5NiAgQzQ2OC4yOTMsMzk1LjU2Myw0NTQuMzk0LDQwOS40NjEsNDM3LjI1LDQwOS40NjF6Ii8+CjxwYXRoIHN0eWxlPSJmaWxsOiMzQTU1NkE7IiBkPSJNMzkwLjg0NSwxMjQuNjY2YzE4LjQ1MywxNS43MSwyNy42NzksMzkuODAzLDI3LjY3OSw3Mi4zMjVzLTkuNDcyLDU2LjMwOS0yOC40Myw3MS4zNzUgIGMtMTguOTc0LDE1LjA2Ni00Ny45MSwyMi42MDYtODYuODI0LDIyLjYwNmgtMzUuMDM2djczLjQ0NGgtNTguNzQ2VjEwMS4xMjVoOTMuMDMxQzM0Mi45NSwxMDEuMTI1LDM3Mi4zOTIsMTA4Ljk4NywzOTAuODQ1LDEyNC42NjYgIHogTTM0Ny43MTcsMjI4LjI1N2M3LjAxOS03LjkwOCwxMC41NDUtMTkuNDY0LDEwLjU0NS0zNC42NTNjMC0xNS4xODgtNC41ODMtMjUuOTkzLTEzLjc0OC0zMi40cy0yMy40MTktOS41OTQtNDIuNzQ1LTkuNTk0aC0zMy41MzQgIHY4OC41MWgzOS41NTdDMzI3LjM3OSwyNDAuMTE5LDM0MC42ODIsMjM2LjE2NSwzNDcuNzE3LDIyOC4yNTd6Ii8+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" width="50" height="60"/>
+    </a>
+	  	<a class="navbar-brand" href="#">apercut</a>
+	  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+	    	<span class="navbar-toggler-icon"></span>
+	  	</button>
+
+	  	<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+	    	<ul class="navbar-nav ml-auto mr-2 mt-rg-0">
+	      		
+	      		<li class="nav-item">
+	        		<%= render 'devise/menu/login_items' %>
+	      		</li>
+	      		<li class="nav-item">
+	        		<%= render 'devise/menu/registration_items' %>
+	      		</li>
+	    	</ul>
+	    	
+	  	</div>
+	</nav>
