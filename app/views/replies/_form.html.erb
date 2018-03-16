@@ -1,5 +1,5 @@
-<%= form_with(model: reply, local: true) do |form| %>
-  <% if reply.errors.any? %>
+<%= form_with(url: new_post_reply_path(params[:post_id], @reply), local: true) do |form| %>
+  <% if @reply.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(reply.errors.count, "error") %> prohibited this reply from being saved:</h2>
 
@@ -17,7 +17,7 @@
   </div>
   <div>
   <%= form.label :post_id %>
-  <%= form.hidden_field :post_id, value: params[:id] %>
+  <%= form.hidden_field :post_id, value: params[:post_id] %>
   </div>
   <div class="actions">
     <%= form.submit %>

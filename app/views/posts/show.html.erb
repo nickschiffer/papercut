@@ -10,7 +10,7 @@
   <strong>Body:</strong>
   <%= @post.body %>
 </p>
-<%= link_to 'Reply',  new_reply_to_post_path(@post.id) %>
+<%= link_to 'Reply',  new_post_reply_path(@post) %>
 <br>
 
 <% if @post.user_id == current_user.id %>
