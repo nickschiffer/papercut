@@ -10,6 +10,7 @@ class RepliesController < ApplicationController
   # GET /replies/1
   # GET /replies/1.json
   def show
+    @post = Post.find(@reply.post_id)
   end
 
   # GET /replies/new
