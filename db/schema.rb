@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180316015018) do
+ActiveRecord::Schema.define(version: 20180316205007) do
+
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.string "author"
+    t.string "condition"
+    t.string "ISBN"
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ISBN"], name: "index_books_on_ISBN", unique: true
+    t.index ["author"], name: "index_books_on_author"
+    t.index ["post_id"], name: "index_books_on_post_id"
+    t.index ["title"], name: "index_books_on_title", unique: true
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false

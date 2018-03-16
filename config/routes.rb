@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :books, :except => [ :index ]
   get 'posts/:id/replies/new', to: 'replies#new', as: "new_reply_to_post"
   post 'posts/:id/replies', to: 'replies#create'
   resources :replies, :except => [ :index ]
