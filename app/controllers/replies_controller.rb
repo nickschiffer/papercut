@@ -41,7 +41,7 @@ class RepliesController < ApplicationController
     p "reply2 = #{@reply2}"
     respond_to do |format|
       if @reply.save
-        format.html { redirect_to @reply, notice: 'Reply was successfully created.' }
+        format.html { redirect_to post_path(@reply.post_id), notice: 'Reply was successfully created.' }
         format.json { render :show, status: :created, location: @reply }
       else
         format.html { render :new }
