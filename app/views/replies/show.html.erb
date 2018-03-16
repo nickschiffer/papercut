@@ -5,6 +5,11 @@
   <%= @reply.body %>
 </p>
 
+	<% if @reply.user_id == current_user.id %> 
+    
 
+    	<td><%= link_to 'Delete', @reply, method: :delete, data: { confirm: 'Are you sure?' } %> |</td>
+    
+    <%end%>
 <%= link_to 'Edit', edit_reply_path(@reply) %> |
 <%= link_to 'Back', post_path(@reply.post_id) %>
