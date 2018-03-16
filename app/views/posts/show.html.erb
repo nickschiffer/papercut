@@ -19,17 +19,19 @@
 <% end %>
 <%= link_to 'Back', posts_path %>
 
-
+  <% if @replies.blank? %>
+    <h3>No Replies Yet</h3>
+  <% else %>
 	<h1>Replies</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>Options</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Body</th>
+        <th>Options</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
 
   <tbody>
     <% @replies.each do |reply| %>
@@ -46,6 +48,7 @@
         <%end%>
 
       </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>

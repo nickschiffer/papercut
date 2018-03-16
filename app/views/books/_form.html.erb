@@ -30,6 +30,10 @@
     <%= form.label :ISBN %>
     <%= form.text_field :ISBN, id: :book_ISBN %>
   </div>
+  <div>
+  <%= form.label :post_id %>
+  <%= form.hidden_field :post_id, value: params[:id] %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

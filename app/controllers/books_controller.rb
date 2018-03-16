@@ -10,6 +10,7 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+    @books = Book.where(:post_id: @post.id)
   end
 
   # GET /books/new

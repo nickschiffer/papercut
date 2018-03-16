@@ -1,19 +1,25 @@
 <% provide(:page_title, 'All Posts') %>
 <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>Options</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
   <tbody>
+    <% if @posts.blank? %>
+    <h3>No Posts Yet</h3>
+    <% else %>
+
+    <h1>Posts</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Body</th>
+          <th>Options</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>
@@ -29,6 +35,7 @@
         <%end%>
 
       </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>
