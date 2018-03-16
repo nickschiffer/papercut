@@ -1,3 +1,4 @@
+<% provide(:page_title, 'All Posts') %>
 <p id="notice"><%= notice %></p>
 
 <h1>Posts</h1>
@@ -7,7 +8,7 @@
     <tr>
       <th>Title</th>
       <th>Body</th>
-      <th>Slug</th>
+      <th>Options</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,10 +18,16 @@
       <tr>
         <td><%= post.title %></td>
         <td><%= post.body %></td>
-        <td><%= post.slug %></td>
-        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'View', post %></td>
+
+        <!-- If user is signed in, show additional options -->
+        <% if post.user_id == current_user.id %> 
+        
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
+        <%end%>
+
       </tr>
     <% end %>
   </tbody>
