@@ -1,0 +1,37 @@
+<% if @books.blank? %>
+  <h3>No Books<h3>
+    <% else %>
+    <h1>Books</h1>
+    <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Condition</th>
+        <th>ISBN</th>
+        <th>Actions</th>
+        <th colspan="5"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @books.each do |book| %>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.author %></td>
+        <td><%= book.condition %></td>
+        <td><%= book.ISBN %></td>
+        <td><%= link_to 'View', book %></td>
+
+        <!-- If user is signed in, show additional options -->
+        <% if @post.user_id == current_user.id %> 
+        
+        <td><%= link_to 'Edit Book', edit_book_path(book) %></td>
+        <td><%= link_to 'Delete Book', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
+        <%end%>
+
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
