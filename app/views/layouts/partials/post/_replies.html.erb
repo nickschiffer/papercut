@@ -1,0 +1,32 @@
+<% if @replies.blank? %>
+    <h3>No Replies Yet</h3>
+  <% else %>
+	<h1>Replies</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Comment</th>
+        <th>Options</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+  <tbody>
+    <% @replies.each do |reply| %>
+      <tr>
+        <td><%= reply.body %></td>
+        <td><%= link_to 'View', reply %></td>
+
+        <!-- If user is signed in, show additional options -->
+        <% if reply.user_id == current_user.id %> 
+        
+        <td><%= link_to 'Edit Reply', edit_reply_path(reply) %></td>
+        <td><%= link_to 'Delete Reply', reply, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
+        <%end%>
+
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
