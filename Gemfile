@@ -44,6 +44,8 @@ gem 'friendly_id', '~> 5.2', '>= 5.2.3'
 
 #CarrierWave for image uploads
 gem 'carrierwave'
+#Rmagic for image resizing
+gem 'rmagick'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
