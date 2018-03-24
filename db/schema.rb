@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180316205007) do
+ActiveRecord::Schema.define(version: 20180323194519) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20180316205007) do
     t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
     t.index ["ISBN"], name: "index_books_on_ISBN", unique: true
     t.index ["author"], name: "index_books_on_author"
     t.index ["post_id"], name: "index_books_on_post_id"

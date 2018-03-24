@@ -2,8 +2,13 @@ Rails.application.routes.draw do
   get 'posts/:id/replies/new', to: 'replies#new', as: "new_reply_to_post"
   post 'posts/:id/replies', to: 'replies#create'
 
-  get 'posts/:id/books/new', to: 'books#new', as: "new_book_to_post"
-  post 'posts/:id/books', to: 'books#create'
+
+  get 'posts/:post_id/books/new', to: 'books#new', as: "new_book_to_post"
+  post 'posts/:post_id/books', to: 'books#create'
+
+  get 'posts/:post_id/books/edit', to: 'books#edit'
+  # patch 'posts/:post_id/books/:id/edit', to: 'books#update', as: "edit_book"
+  # put 'posts/:post_id/books/:id/edit', to: 'books#update'
 
   resources :books, :except => [ :index ]
   resources :replies, :except => [ :index ]
