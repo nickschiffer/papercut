@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'posts/:id/replies/new', to: 'replies#new', as: "new_reply_to_post"
-  post 'posts/:id/replies', to: 'replies#create'
+  get 'posts/:post_id/replies/new', to: 'replies#new', as: "new_reply_to_post"
+  post 'posts/:post_id/replies', to: 'replies#create'
 
 
   get 'posts/:post_id/books/new', to: 'books#new', as: "new_book_to_post"

@@ -20,7 +20,7 @@
         <!-- If user is signed in, show additional options -->
         <% if reply.user_id == current_user.id %> 
         
-        <td><%= link_to 'Edit Reply', edit_reply_path(reply) %></td>
+        <td><%= link_to 'Edit Reply', controller: "replies", :action => "edit", :id => reply.id, :post_id => reply.post_id %></td>
         <td><%= link_to 'Delete Reply', reply, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         
         <%end%>

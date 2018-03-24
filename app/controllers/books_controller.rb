@@ -17,10 +17,12 @@ class BooksController < ApplicationController
   # GET /books/new
   def new
     @book = Book.new
+    @post = Post.find(params[:post_id])
   end
 
   # GET /books/1/edit
   def edit
+    @post = Post.find(@book.post_id)
   end
 
   # POST /books
