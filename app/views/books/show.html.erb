@@ -3,7 +3,11 @@
 
 <p>
 	 <strong>Image:</strong>
-	<%= image_tag @book.image_url.to_s %>
+	<%# image_tag @book.image_url(:thumb).to_s %>
+
+	<%= link_to @book.image_url.to_s do %>
+      <%= image_tag(@book.image_url(:thumb).to_s, class: "grow shadow") %>
+<% end %>
 </p>
 <p>
   <strong>Title:</strong>
