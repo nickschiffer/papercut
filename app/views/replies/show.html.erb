@@ -12,5 +12,5 @@
     	<td><%= link_to 'Delete', @reply, method: :delete, data: { confirm: 'Are you sure?' } %> |</td>
     
     <%end%>
-<%= link_to 'Edit', edit_reply_path(@reply) %> |
+<%= link_to 'Edit', :action => "edit", :id => @reply.id, :post_id => @reply.post_id %> |
 <%= link_to 'Back', post_path(@reply.post_id) %>

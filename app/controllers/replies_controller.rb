@@ -20,12 +20,14 @@ class RepliesController < ApplicationController
     end
     @reply = Reply.new
     @parent_id2 = params[:id]
+    @post = Post.find(params[:post_id])
     # p "parent2 id = #{@parent_id2}"
 
   end
 
   # GET /replies/1/edit
   def edit
+    @post = Post.find(@reply.post_id)
   end
 
   # POST /replies

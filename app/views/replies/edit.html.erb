@@ -1,7 +1,7 @@
-<% provide(:page_title, "Edit #{@reply.title}") %>
+<% provide(:page_title, "Edit Reply") %>
 <h1>Editing Reply</h1>
 
 <%= render 'form', reply: @reply %>
 
 <%= link_to 'Show', @reply %> |
-<%= link_to 'Back', replies_path %>
+<%= link_to 'Back', @post %>

@@ -2,6 +2,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+	 <strong>Image:</strong>
+	<%= image_tag @book.image_url.to_s %>
+</p>
+<p>
   <strong>Title:</strong>
   <%= @book.title %>
 </p>
@@ -21,5 +25,5 @@
   <%= @book.ISBN %>
 </p>
 
-<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Edit', :action => "edit", :id => @book.id, :post_id => @post.id %> |
 <%= link_to 'Back', post_path(@book.post_id) %>
