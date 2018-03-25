@@ -88,4 +88,10 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Heroku Asset issues
+  # https://stackoverflow.com/questions/16271696/cant-get-css-working-on-heroku-using-rails-4-with-bootstrap-sass-gem
+  config.cache_classes = true
+  config.serve_static_files = true
+  config.assets.compile = true
 end
