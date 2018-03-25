@@ -23,7 +23,8 @@
 
   <div class="field">
     <%= form.label :condition %>
-    <%= form.text_field :condition, id: :book_condition %>
+    <%# form.text_field :condition, id: :book_condition %>
+    <%= form.select :condition, ['Great', 'Good', 'OK', 'Poor']%>
   </div>
 
   <div class="field">
