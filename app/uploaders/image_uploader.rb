@@ -44,7 +44,11 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+  # def default_url
+  #   "fallback/book_placeholder.png"
+  # end
+  
   def default_url
-    "images/fallback/book_placeholder.png"
+    "fallback/book_placeholder_thumb.png"
   end
 end
