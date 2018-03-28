@@ -2,43 +2,9 @@
 <p id="notice"><%= notice %></p>
 
 
-
-  <tbody>
-    <% if @posts.blank? %>
-    <h3>No Posts Yet</h3>
-    <% else %>
-
-    <h1>Posts</h1>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Body</th>
-          <th>Options</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.body %></td>
-        <td><%= link_to 'View', post %></td>
-
-        <!-- If user is signed in, show additional options -->
-        <% if post.user_id == current_user.id %> 
-        
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        
-        <%end%>
-
-      </tr>
-    <% end %>
-    <% end %>
-  </tbody>
-</table>
+  <div class="row">
+    <%= render @posts %>
+  </div>
 
 <br>
 
