@@ -12,6 +12,7 @@ class PostsController < ApplicationController
   def show
     @replies = Reply.where(post_id: @post.id)
     @books = Book.where(post_id: @post.id)
+    @user = User.find(@post.user_id)
   end
 
   # GET /posts/new
