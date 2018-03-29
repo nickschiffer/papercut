@@ -2,10 +2,19 @@
 <p id="notice"><%= notice %></p>
 
 
-  <div class="row">
-    <%= render @posts %>
-  </div>
 
+  <% if @posts.blank? %>
+    <h3>No Posts Yet</h3>
+    <%= link_to 'Create One?', new_post_path, class: 'btn btn-success'%>
+  <% else %>
+  
+   <%= link_to 'New Post', new_post_path, class: 'btn btn-success'%>
+      
+    <div class="row">
+      <%= render @posts %>
+    </div>
+    <%= link_to 'New Post', new_post_path, class: 'btn btn-success' %>
+  <% end %>
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+
