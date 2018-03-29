@@ -5,6 +5,17 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    @images = []
+    @posts.each do |post|
+      @books_tmp = Book.where(post_id: post.id)
+      @books_tmp.each do |book|
+        if book.image != nil
+          @images << book.image
+        else
+          @images << asset_url('fallback/book_placeholder.png')
+        end
+      end
+    end
   end
 
   # GET /posts/1

@@ -11,7 +11,13 @@
   <%= @post.body %>
 </p>
 
-<%= render 'layouts/partials/post/books' %>
+<% if @books.blank? %>
+    <h3>No Books Yet</h3>
+    <%= link_to 'Create One?', new_book_path, class: 'btn btn-success'%>
+    <%else%>
+<%# render 'layouts/partials/post/books' %>
+<%= render @books %>
+	<%end%>
 
 <% if @post.user_id == current_user.id %>
 <%= link_to 'Add Book', new_book_to_post_path(@post.id) %>
@@ -25,10 +31,3 @@
 <%= link_to 'Back', posts_path %>
 
 <%= render 'layouts/partials/post/replies' %>
-  
-
-
-
-
-  
-
