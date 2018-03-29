@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20180323194519) do
     t.text "body"
     t.string "slug"
     t.integer "user_id"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_posts_on_slug", unique: true

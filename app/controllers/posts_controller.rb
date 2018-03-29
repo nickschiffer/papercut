@@ -5,13 +5,32 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    @images = []
+    @posts.each do |post|
+      @books_tmp = Book.where(post_id: post.id)
+      if @books_tmp.empty?
+        post.image = "assets/fallback/book_placeholder_thumb.png"
+      else
+        @books_tmp.each do |book|
+          if book.image != nil
+            post.image = book.image_url(:thumb).to_s
+            break
+          else
+            post.image = "assets/fallback/book_placeholder_thumb.png"
+            byebug
+          end
+        end
+      end
+    end
   end
+
 
   # GET /posts/1
   # GET /posts/1.json
   def show
     @replies = Reply.where(post_id: @post.id)
     @books = Book.where(post_id: @post.id)
+    @user = User.find(@post.user_id)
   end
 
   # GET /posts/new

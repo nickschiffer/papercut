@@ -1,37 +1,25 @@
 <% if @books.blank? %>
   <h3>No Books<h3>
     <% else %>
-    <h1>Books</h1>
-    <table>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Condition</th>
-        <th>ISBN</th>
-        <th>Actions</th>
-        <th colspan="5"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @books.each do |book| %>
-      <tr>
-        <td><%= book.title %></td>
-        <td><%= book.author %></td>
-        <td><%= book.condition %></td>
-        <td><%= book.ISBN %></td>
-        <td><%= link_to 'View', book %></td>
-
-        <!-- If user is signed in, show additional options -->
-        <% if @post.user_id == current_user.id %> 
-        
-        <td><%= link_to 'Edit Book', {controller: "books", :action => "edit", :id => book.id, :post_id => @post.id}  %></td>
-        <td><%= link_to 'Delete Book', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        
-        <%end%>
-
-      </tr>
-    <% end %>
-    <% end %>
-  </tbody>
-</table>
+    <div class='col-sm-6 col-lg-4'>
+  <div class="books">
+    <div class="card">
+      <!-- <div class="card-topper" style='background-image: url(<%# ((Book.where(:post_id post.id)).image.exists?) ? ((Book.where(:post_id post.id)).image) : ("assets/fallback/book_placeholder.png") %>);'></div> -->
+      <div class="card-topper" style='background-image: url("assets/fallback/book_placeholder.png");'></div>
+      <div class="card-block">
+        <h4 class="card-title"><%= link_to book.title, book %></h4>
+        <br>        
+        <p class="card-text"><%= book.author %></p>
+        <p class="card-text"><%= book.condition %></p>
+        <p class="card-text"><%= book.ISBN %></p>
+        <%= link_to 'View', book, class: 'btn btn-primary' %>
+        <% if post.user_id == current_user.id %> 
+          
+              <%= link_to 'Edit', edit_book_path(book), class: 'btn btn-primary' %>
+              <%= link_to 'Delete', book, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+          <% end %>
+      </div>
+    </div>
+  </div>  
+</div>
+<%end%>
