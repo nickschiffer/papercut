@@ -8,15 +8,22 @@ class PostsController < ApplicationController
     @images = []
     @posts.each do |post|
       @books_tmp = Book.where(post_id: post.id)
-      @books_tmp.each do |book|
-        if book.image != nil
-          @images << book.image
-        else
-          @images << asset_url('fallback/book_placeholder.png')
+      if @books_tmp.empty?
+        post.image = "assets/fallback/book_placeholder_thumb.png"
+      else
+        @books_tmp.each do |book|
+          if book.image != nil
+            post.image = book.image_url(:thumb).to_s
+            break
+          else
+            post.image = "assets/fallback/book_placeholder_thumb.png"
+            byebug
+          end
         end
       end
     end
   end
+
 
   # GET /posts/1
   # GET /posts/1.json
