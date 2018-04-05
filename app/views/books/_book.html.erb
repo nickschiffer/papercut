@@ -12,10 +12,20 @@
 				<p class="card-text">Author: <%= book.author %></p>
 				<p class="card-text">Condition: <%= book.condition %></p>
 				<p class="card-text">ISBN: <%= book.ISBN %></p>
-				<%= link_to 'View', book, class: 'btn btn-primary' %>
+				<%= link_to book, class: 'btn btn-primary' do %>
+					<span>
+				  		<i class="fa fa-eye"></i>
+				  		View
+				  	</span>
+				<% end %>
 				<% if (Post.find(book.post_id)).user_id == current_user.id %> 
 	        		<%= link_to 'Edit', {:controller => "books", :action => "edit", :id => book.id, :post_id => params[:id]}, :class => "btn btn-primary" %>
-			        <%= link_to 'Delete', book, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+			        <%= link_to book, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do %>
+				        <span>
+					  		<i class="fa fa-trash"></i>
+					  		Delete
+					  	</span>
+					<% end %>
 			    <% end %>
 			</div>
 		</div>
