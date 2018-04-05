@@ -17,16 +17,15 @@ CarrierWave.configure do |config|
   if Rails.env.development? || Rails.env.test?
      config.storage = :file
   else
-      config.storage = :fog
+     config.storage = :fog
   end
   
-  config.cache_dir = "#{Rails.root}/tmp/uploads"
+  #config.cache_dir = "#{Rails.root}/tmp/uploads"
   config.fog_directory  = ENV["AWS_BUCKET_NAME"]                  # required
   #config.fog_host       = 'https://assets.example.com'           # optional, defaults to nil
-  config.fog_public     = false                                  # optional, defaults to true
+  config.fog_public     = false                                   # optional, defaults to true
   config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}  # optional, defaults to {}
-  config.storage = :fog
-  # Use AWS storage if in production
+  #config.storage = :fog
     
   
 end
