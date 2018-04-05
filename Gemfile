@@ -38,6 +38,7 @@ gem 'devise', '~> 4.2'
 
 #Font Awesome
 gem 'font-awesome-sass'
+gem 'font-awesome-rails'
 
 #Friendly ID
 gem 'friendly_id', '~> 5.2', '>= 5.2.3'
