@@ -1,4 +1,5 @@
 <%= form_with(model: post, local: true) do |form| %>
+<%= stylesheet_link_tag 'devise' %>
   <% if post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -11,17 +12,17 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :post_title %>
+  <div class="mx-auto text-center">
+    <%= form.label  :title %>
+    <%= form.text_field :title, id: :post_title, autocomplete: "title"%>
   </div>
 
-  <div class="field">
+  <div class="mx-auto text-center">
     <%= form.label :body %>
     <%= form.text_area :body, id: :post_body %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="mx-auto text-center">
+    <%= form.submit "Create Post", :class => "btn btn-success" %>
   </div>
 <% end %>

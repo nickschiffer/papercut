@@ -1,9 +1,16 @@
 <% provide(:page_title, 'New Post') %>
-<h1>New Post</h1>
+<%= stylesheet_link_tag 'devise' %>
+<h1 class="text-center mx-auto">New Post</h1>
 
 <%= render 'form', post: @post %>
-<h3>You will be prompted to add books on the next page</h3><br> 
+<h3 class="text-center mx-auto">You will be prompted to add books on the next page</h3><br> 
 
 
 
-<%= link_to 'Back', posts_path %>
+<%= link_to posts_path, :class =>"mx-auto btn btn-primary" do %>
+	<span>
+		<span>
+		<i class="fa fa-backward"></i>
+		Back
+	</span>
+<% end %>

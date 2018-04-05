@@ -5,15 +5,30 @@
 
   <% if @posts.blank? %>
     <h3>No Posts Yet</h3>
-    <%= link_to 'Create One?', new_post_path, class: 'btn btn-success'%>
+      <%= link_to 'Create One?', new_post_path, class: 'btn btn-success' do %>
+        <span>
+            <i class="fa fa-plus"></i>
+            Create One?
+        </span>
+      <% end %>
   <% else %>
   
-   <%= link_to 'New Post', new_post_path, class: 'btn btn-success'%>
+   <%= link_to new_post_path, class: 'btn btn-success' do %>
+      <span>
+        <i class="fa fa-plus"></i>
+        New Post
+      </span>
+    <% end %>
       
     <div class="row">
       <%= render @posts %>
     </div>
-    <%= link_to 'New Post', new_post_path, class: 'btn btn-success' %>
+    <%= link_to new_post_path, class: 'btn btn-success' do %>
+      <span>
+        <i class="fa fa-plus"></i>
+        New Post
+      </span>
+    <% end %>
   <% end %>
 <br>
 

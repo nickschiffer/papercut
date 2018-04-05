@@ -1,6 +1,12 @@
 <% provide(:page_title, 'New Book') %>
-<h1>New Book</h1>
+<h1 class="mx-auto text-center">New Book</h1>
 
 <%= render 'form', book: @book %>
 
-<%= link_to 'Back', @post %>
+<%= link_to @post, :class =>"mx-auto btn btn-primary" do %>
+	<span>
+		<span>
+		<i class="fa fa-backward"></i>
+		Back
+	</span>
+<% end %>
