@@ -44,6 +44,8 @@ gem 'friendly_id', '~> 5.2', '>= 5.2.3'
 
 #CarrierWave for image uploads
 gem 'carrierwave'
+gem 'fog'
+
 #Rmagic for image resizing
 gem 'rmagick'
 # Use Redis adapter to run Action Cable in production
@@ -61,7 +63,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
+  #gem 'sqlite3'
 end
 
 group :development do
@@ -79,6 +81,8 @@ group :production do
   gem 'pg'
   # gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
   # gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+  # FOG for S3 Storage
+  gem 'fog-aws'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
