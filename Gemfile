@@ -44,7 +44,7 @@ gem 'friendly_id', '~> 5.2', '>= 5.2.3'
 
 #CarrierWave for image uploads
 gem 'carrierwave'
-gem 'fog'
+#gem 'fog'
 
 #Rmagic for image resizing
 gem 'rmagick'
