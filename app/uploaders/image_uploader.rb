@@ -56,4 +56,14 @@ class ImageUploader < CarrierWave::Uploader::Base
   def default_url
     "fallback/book_placeholder_thumb.png"
   end
+  
+  # Only Accept Image Files
+  def content_type_whitelist
+    /image\//
+  end
+
+  # Cache Directory
+  def cache_dir
+    '/tmp/papercut-image-cache'
+  end
 end
