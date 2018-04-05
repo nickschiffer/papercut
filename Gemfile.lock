@@ -404,6 +404,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise (~> 4.2)
   fog
+  fog-aws
   font-awesome-sass
   friendly_id (~> 5.2, >= 5.2.3)
   jbuilder (~> 2.5)
