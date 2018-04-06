@@ -1,58 +1,60 @@
 <% provide(:page_title, @post.title) %>
-<p id="notice"><%= notice %></p>
+<div class="mx-auto text-center">
+	<p id="notice"><%= notice %></p>
+	<p>
+	  <strong>Title:</strong>
+	  <%= @post.title %>
+	</p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+	<p>
+	  <strong>Body:</strong>
+	  <%= @post.body %>
+	</p>
 
-<p>
-  <strong>Body:</strong>
-  <%= @post.body %>
-</p>
+	<% if @books.blank? %>
+	    <h3>No Books Yet</h3>
+	    <%else%>
+	<%# render 'layouts/partials/post/books' %>
+		<%= render @books %>
+		<%end%>
 
-<% if @books.blank? %>
-    <h3>No Books Yet</h3>
-    <%else%>
-<%# render 'layouts/partials/post/books' %>
-	<%= render @books %>
-	<%end%>
+	<% if @post.user_id == current_user.id %>
+		<%= link_to new_book_to_post_path(@post.id), class: 'btn btn-success' do %>
+		  <span>
+		    <i class="fa fa-plus"></i>
+		    Add Book
+		  </span>
+		<% end %>
 
-<% if @post.user_id == current_user.id %>
-	<%= link_to new_book_to_post_path(@post.id), class: 'btn btn-success' do %>
-	  <span>
-	    <i class="fa fa-plus"></i>
-	    Add Book
-	  </span>
+	<br>
+	<br>
+		<%= link_to edit_post_path(@post), class: 'btn btn-warning' do %>
+			<span>
+				<i class="fa fa-edit"></i>
+				Edit Post
+			</span> 
+		<% end %> | 
+		<%= link_to @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do %> 
+			<span>
+				<i class="fa fa-trash"></i>
+				Delete Post
+			</span>
+		<% end %> |
+	<% else %>
+		<%= link_to new_reply_to_post_path(@post.id), class: 'btn btn-primary' do %>
+			<span>
+				<i class="fa fa-pen-reply"></i>
+				Reply to Post
+			</span>
+		<% end %> |
 	<% end %>
-
-<br>
-<br>
-	<%= link_to edit_post_path(@post), class: 'btn btn-warning' do %>
+	<%= link_to posts_path, class: 'btn btn-primary' do %>
 		<span>
-			<i class="fa fa-edit"></i>
-			Edit Post
-		</span> 
-	<% end %>	| 
-	<%= link_to @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do %> 
-		<span>
-			<i class="fa fa-trash"></i>
-			Delete Post
+			<i class="fa fa-backward"></i>
+			Back
 		</span>
-	<% end %> |
-<% else %>
-	<%= link_to new_reply_to_post_path(@post.id), class: 'btn btn-primary' do %>
-		<span>
-			<i class="fa fa-pen-reply"></i>
-			Reply to Post
-		</span>
-	<% end %> |
-<% end %>
-<%= link_to posts_path, class: 'btn btn-primary' do %>
-	<span>
-		<i class="fa fa-backward"></i>
-		Back
-	</span>
-<% end %>
+	<% end %>
+	<br></br>
 
-<%= render 'layouts/partials/post/replies' %>
+	<%= render 'layouts/partials/post/replies' %>
+</div>
