@@ -15,7 +15,9 @@
 	    <h3>No Books Yet</h3>
 	    <%else%>
 	<%# render 'layouts/partials/post/books' %>
-		<%= render @books %>
+		<div class="row">
+			<%= render @books %>
+    	</div>
 		<%end%>
 
 	<% if @post.user_id == current_user.id %>
