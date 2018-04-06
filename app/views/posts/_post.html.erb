@@ -3,8 +3,9 @@
 		<div class="card">
 			<!-- <div class="card-topper" style='background-image: url(<%# ((Book.where(:post_id post.id)).image.exists?) ? ((Book.where(:post_id post.id)).image) : ("assets/fallback/book_placeholder.png") %>);'></div> -->
 			<!-- <div class="card-topper" style='background-image: url("/assets/fallback/book_placeholder.png");'></div> -->
-			<div class="card-topper" style='background-image: url(<%= post.image %>);'></div>
-			<div class="card-block">
+			<!-- <div class="card-topper" style='background-image: url(<%= post.image.to_s %>);'></div> -->
+			<%= image_tag(post.image.to_s, :class => "text-center mx-auto card-topper", :style => "background-image", :align => "middle", size: "175x200") %>
+			<div class="card-block text-center">
 				<h4 class="card-title"><%= link_to post.title, post %></h4>
 				<p class="published-date">Published <%= post.created_at%></p>
 				<% if post.created_at != post.updated_at %>

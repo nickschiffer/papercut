@@ -54,7 +54,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
   
   def default_url
-    "fallback/book_placeholder_thumb.png"
+    "book_placeholder_thumb.png"
   end
 
   # Only Accept Image Files

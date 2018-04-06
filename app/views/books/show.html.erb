@@ -5,9 +5,10 @@
 	 <strong>Image:</strong>
 	<%# image_tag @book.image_url(:thumb).to_s %>
 
-	<%= link_to @book.image_url.to_s do %>
-      <%= image_tag(@book.image_url(:thumb).to_s, class: "grow shadow") %>
-<% end %>
+	<%# link_to @book.image_url.to_s do %>
+      <%= image_tag(@book.image_url(:thumb).to_s, class: "grow shadow text-center mx-auto card-topper", :style => "background-image", :align => "middle", size: "450x600") %>
+      <!-- :class => "text-center mx-auto card-topper", :style => "background-image", :align => "middle", size: "150x200" -->
+<%# end %>
 </p>
 <p>
   <strong>Title:</strong>

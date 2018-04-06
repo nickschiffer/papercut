@@ -9,15 +9,14 @@ class PostsController < ApplicationController
     @posts.each do |post|
       @books_tmp = Book.where(post_id: post.id)
       if @books_tmp.empty?
-        post.image = "assets/fallback/book_placeholder_thumb.png"
+        post.image = ActionController::Base.helpers.asset_url("book_placeholder_thumb.png", type: :image)
       else
         @books_tmp.each do |book|
-          if book.image != nil
+          if book.image_url(:thumb).to_s != ActionController::Base.helpers.asset_url("book_placeholder_thumb.png", type: :image)
             post.image = book.image_url(:thumb).to_s
             break
           else
-            post.image = "assets/fallback/book_placeholder_thumb.png"
-            byebug
+            post.image = ActionController::Base.helpers.asset_url("book_placeholder_thumb.png", type: :image)
           end
         end
       end
