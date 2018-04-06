@@ -12,6 +12,7 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
     @post = Post.find(@book.post_id)
+    @user = User.find(@post.user_id)
   end
 
   # GET /books/new
