@@ -1,9 +1,9 @@
 .posts.index {
 	.card {
 		border: none;
-		border-radius: 0;
+		border-radius: 5px;
 		border-bottom: 1px solid #181818;
-		height: 400px;
+		height: 440px;
 		margin-bottom: 20px;
 		.card-topper {
 			
@@ -47,18 +47,18 @@
 
 @media screen and (min-width: 34em) {
 	.posts.index .card {
-		height: 440px;
+		height: 440px !important;
 	}
 }
 
 @media screen and (min-width: 48em) {
 	.posts.index .card {
-		height: 420px;
+		height: 440px !important;
 	}
 }
 
 @media screen and (min-width: 75em) {
 	.posts.index .card {
-		height: 415px;
+		height: 440px !important;
 	}
 }

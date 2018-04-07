@@ -1,20 +1,21 @@
 <div class='col-sm-6 col-lg-4'>
 	<div class="posts index">
-		<div class="card">
+		<div class="post index card">
 			<!-- <div class="card-topper" style='background-image: url(<%# ((Book.where(:post_id post.id)).image.exists?) ? ((Book.where(:post_id post.id)).image) : ("assets/fallback/book_placeholder.png") %>);'></div> -->
 			<!-- <div class="card-topper" style='background-image: url("/assets/fallback/book_placeholder.png");'></div> -->
 			<!-- <div class="card-topper" style='background-image: url(<%= post.image.to_s %>);'></div> -->
 			<%= image_tag(post.image.to_s, :class => "text-center mx-auto card-topper", :style => "background-image", :align => "middle", size: "175x200") %>
 			<div class="card-block text-center">
 				<h4 class="card-title"><%= link_to post.title, post %></h4>
+				<p class="card-text"><%= truncate(post.body, length: 130) %></p>
+				<p class="published-date"><%= (Book.where(post_id: post.id)).count %> books and <%= (Reply.where(post_id: post.id)).count %> replies</p>
+				<p class="published-date">Posted by <%= (User.find(post.user_id)).first_name%> <%=(User.find(post.user_id)).last_name %></p>
 				<p class="published-date">Published <%= post.created_at%></p>
 				<% if post.created_at != post.updated_at %>
 				<p class="published-date">Updated <%= post.updated_at%></p>
-				<% else %>
-				<br>
+				
 				<% end %>
-				<p class="published-date">Posted by <%= (User.find(post.user_id)).first_name%> <%=(User.find(post.user_id)).last_name %></p>
-				<p class="card-text"><%= truncate(post.body, length: 130) %></p>
+				<br>
 				<%= link_to post, class: 'btn btn-primary' do %>
 					<span>
 				  		<i class="fa fa-eye"></i>
