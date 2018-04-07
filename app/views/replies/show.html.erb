@@ -1,16 +1,27 @@
 <% provide(:page_title, @post.title) %>
 <p id="notice"><%= notice %></p>
-
+<div class="mx-auto text-center card">
 <p>
-  <strong>Body:</strong>
+  <strong>Reply:</strong>
+  <br />
   <%= @reply.body %>
 </p>
+</div>
 
 	<% if @reply.user_id == current_user.id %> 
-    
-
-    	<td><%= link_to 'Delete', @reply, method: :delete, data: { confirm: 'Are you sure?' } %> |</td>
-    
+    	<%# link_to 'Delete', @reply, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Edit', {:action => "edit", :id => @reply.id, :post_id => @reply.post_id}, :class => "btn btn-warning" %> |
+      <%= link_to @reply, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do %>
+				        <span>
+					  		<i class="fa fa-trash"></i>
+					  		Delete
+					  	</span>
+					<% end %> |    
     <%end%>
-<%= link_to 'Edit', :action => "edit", :id => @reply.id, :post_id => @reply.post_id %> |
-<%= link_to 'Back', post_path(@reply.post_id) %>
+
+<%= link_to post_path(@reply.post_id), class: 'btn btn-primary' do %>
+    <span>
+		 		<i class="fa fa-backward"></i>
+		 		Back
+		</span>
+<% end %>

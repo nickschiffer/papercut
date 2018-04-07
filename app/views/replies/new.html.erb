@@ -1,5 +1,10 @@
-<h1>New Reply</h1>
+<h1 class="mx-auto text-center">New Reply</h1>
 
 <%= render 'form', reply: @reply %>
 
-<%= link_to 'Back', @post %>
+<%= link_to @post, :class =>"mx-auto btn btn-primary" do %>
+	<span>
+		<i class="fa fa-backward"></i>
+		Back
+	</span>
+<% end %>

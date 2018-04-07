@@ -11,6 +11,7 @@ class RepliesController < ApplicationController
   # GET /replies/1.json
   def show
     @post = Post.find(@reply.post_id)
+    @user = User.find(@reply.user_id)
   end
 
   # GET /replies/new
@@ -70,9 +71,10 @@ class RepliesController < ApplicationController
   # DELETE /replies/1
   # DELETE /replies/1.json
   def destroy
+    @post = Post.find(@reply.post_id)
     @reply.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Reply was successfully deleted.' }
+      format.html { redirect_to @post, notice: 'Reply was successfully deleted.' }
       format.json { head :no_content }
     end
   end

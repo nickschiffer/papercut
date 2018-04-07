@@ -57,6 +57,13 @@
 		</span>
 	<% end %>
 	<br></br>
-
-	<%= render 'layouts/partials/post/replies' %>
+	<% if @replies.blank? %>
+	  <h3>No Replies Yet</h3>
+	<%else%>
+	<%# render 'layouts/partials/post/books' %>
+	 <h2>Replies</h2>
+	 <div class="row">
+			<%= render @replies %>
+   </div>
+	 <%end%>
 </div>

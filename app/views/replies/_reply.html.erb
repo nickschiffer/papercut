@@ -1,0 +1,44 @@
+<!-- <div class="mx-auto text-center"> -->
+	<div class='col-sm-6 col-lg-4'>
+		<div class="replies">
+			<div class="card">
+				<!-- <div class="card-topper" style='background-image: url(<%# ((Book.where(:post_id post.id)).image.exists?) ? ((Book.where(:post_id post.id)).image) : ("assets/fallback/book_placeholder.png") %>);'></div> -->
+				<!-- <div class="card-topper" style='background-image: url("../assets/fallback/book_placeholder.png");'></div> -->
+				<%# link_to book.image.to_s do %>
+	      		<%#end%>
+				<div class="card-block text-center">
+				<h4 class="card-title">
+                <%= link_to "Reply", reply, class: 'card-title' %>
+                </h4>
+				<p class="card-text"><%= truncate(reply.body, length: 130) %></p>
+				<p class="published-date">Published <%= reply.created_at%></p>
+				<% if reply.created_at != reply.updated_at %>
+				    <p class="published-date">Updated <%= reply.updated_at%></p>
+				<% else %>
+				<br>
+				<% end %>
+				<p class="published-date">Posted by <%= @user.first_name%> <%= @user.last_name %></p>
+                <br />
+				<%= link_to reply, class: 'btn btn-primary' do %>
+					<span>
+				  		<i class="fa fa-eye"></i>
+				  		View
+				  	</span>
+				<% end %>
+				<% if reply.user_id == current_user.id %> 
+	        
+			        <%# link_to edit_reply_path(reply.post_id, reply), class: 'btn btn-primary' do %>
+                    <%= link_to 'Edit', {:controller => "replies", :action => "edit", :id => reply.id, :post_id => params[:id]}, :class => "btn btn-primary" %>
+				        
+			        <%= link_to reply, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do %>
+				        <span>
+					  		<i class="fa fa-trash"></i>
+					  		Delete
+					  	</span>
+					<% end %>
+			    <% end %>
+			</div>
+			</div>
+		</div>	
+	</div>
+<!-- </div> -->
