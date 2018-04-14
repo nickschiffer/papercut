@@ -5,7 +5,6 @@ class CreateSales < ActiveRecord::Migration[5.1]
       t.integer :buyer_id
 
       t.belongs_to :user
-      t.has_many :books
 
       t.timestamps
     end

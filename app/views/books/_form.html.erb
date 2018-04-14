@@ -32,6 +32,10 @@
     <%= form.text_field :ISBN, id: :book_ISBN %>
   </div>
   <div class="mx-auto text-center">
+    <%= form.label :value %>
+    <%= form.text_field :value, id: :book_value %>
+  </div>
+  <div class="mx-auto text-center">
     <%= form.file_field :image, id: :image %>
   </div>
   <br>

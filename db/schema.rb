@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20180414220337) do
     t.string "author"
     t.string "condition"
     t.string "ISBN"
+    t.integer "value", default: 0
     t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -66,8 +67,10 @@ ActiveRecord::Schema.define(version: 20180414220337) do
   create_table "sales", force: :cascade do |t|
     t.integer "seller_id"
     t.integer "buyer_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sales_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
