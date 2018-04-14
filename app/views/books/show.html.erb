@@ -30,7 +30,7 @@
 </p>
 <p>
   <strong>Value:</strong>
-  <%= @book.value %>
+  <%= "$#{'%.2f' % @book.value}" %>
 </p>
 <% if @user.id == current_user.id %>
 <%= link_to fa_icon('fa-pen-square')+"Edit", {:action => "edit", :id => @book.id, :post_id => @post.id}, :class => "btn btn-primary" %>

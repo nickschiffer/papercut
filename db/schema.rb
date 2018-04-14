@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20180414220337) do
     t.string "author"
     t.string "condition"
     t.string "ISBN"
-    t.integer "value", default: 0
+    t.float "value", default: 0.0
     t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

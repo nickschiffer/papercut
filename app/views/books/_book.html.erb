@@ -13,7 +13,7 @@
 					<p class="card-text ">Author: <%= book.author %></p>
 					<p class="card-text ">Condition: <%= book.condition %></p>
 					<p class="card-text ">ISBN: <%= book.ISBN %></p>
-					<p class="card-text ">Value: <%= book.value %></p>
+					<p class="card-text ">Value: <%= "$#{'%.2f' % book.value}" %></p>
 					<%= link_to book, class: 'btn btn-primary' do %>
 						<span>
 					  		<i class="fa fa-eye"></i>
