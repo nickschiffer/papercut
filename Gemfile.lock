@@ -115,6 +115,8 @@ GEM
       activerecord (>= 4.0.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    gmap_coordinates_picker (0.1.2)
+      rails (>= 3.1.0, < 6)
     i18n (1.0.0)
       concurrent-ruby (~> 1.0)
     ipaddress (0.8.3)
@@ -253,6 +255,7 @@ DEPENDENCIES
   font-awesome-rails
   font-awesome-sass
   friendly_id (~> 5.2, >= 5.2.3)
+  gmap_coordinates_picker
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)

@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20180414220337) do
     t.string "slug"
     t.integer "user_id"
     t.string "image"
+    t.float "latitude"
+    t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_posts_on_slug", unique: true
