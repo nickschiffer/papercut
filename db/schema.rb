@@ -22,10 +22,10 @@ ActiveRecord::Schema.define(version: 20180414220337) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
-    t.index ["ISBN"], name: "index_books_on_ISBN", unique: true
+    t.index ["ISBN"], name: "index_books_on_ISBN"
     t.index ["author"], name: "index_books_on_author"
     t.index ["post_id"], name: "index_books_on_post_id"
-    t.index ["title"], name: "index_books_on_title", unique: true
+    t.index ["title"], name: "index_books_on_title"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|

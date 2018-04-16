@@ -12,8 +12,8 @@ class CreateBooks < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
-    add_index :books, :title, unique: true
+    add_index :books, :title
     add_index :books, :author
-    add_index :books, :ISBN, unique: true
+    add_index :books, :ISBN
   end
 end
