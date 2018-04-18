@@ -1,14 +1,14 @@
-<% provide(:page_title, 'All Posts') %>
+<% provide(:page_title, 'All Books') %>
 <p id="notice"><%= notice %></p>
 
 
   <%= render "layouts/partials/nav" %>
-  <% if @posts.blank? %>
-    <h3>No Posts Yet</h3>
+  <% if @allbooks.blank? %>
+    <h3>No Books Yet</h3>
       <%= link_to new_post_path, class: 'btn btn-success' do %>
         <span>
             <i class="fa fa-plus"></i>
-            Create One?
+            Create a Post?
         </span>
       <% end %>
   <% else %>
@@ -22,7 +22,7 @@
     <br></br>
       
     <div class="row">
-      <%= render @posts %>
+      <%= render @allbooks %>
     </div>
     <%= link_to new_post_path, class: 'btn btn-success' do %>
       <span>
