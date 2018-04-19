@@ -36,6 +36,10 @@ class PostsController < ApplicationController
     @allbooks = Book.all
   end
 
+  def searchbooks
+
+  end
+
   # GET /posts/new
   def new
     @post = Post.new

@@ -3,6 +3,22 @@
 
 
   <%= render "layouts/partials/nav" %>
+</p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Search
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    Title:<br />
+    Author:<br />
+    Condition:<br />
+    ISBN:<br />
+    Price:<br />
+  </div>
+</div>
+
+
   <% if @allbooks.blank? %>
     <h3>No Books Yet</h3>
       <%= link_to new_post_path, class: 'btn btn-success' do %>
