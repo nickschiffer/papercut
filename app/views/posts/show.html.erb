@@ -11,17 +11,25 @@
 	  <strong>Body:</strong>
 	  <%= @post.body %>
 	</p>
-	<p>
-		<strong>Location:</strong>
-			<%# render_gmap_coordinate_picker api_key: ENV["MAPS_API_KEY"],  :static => 'true', :zoom_level => 10, :default_coordinates => [@post.latitude,@post.longitude]   %>
-	</p>
-	<div class="row mx-auto text-center">
+
+	<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    <%=fa_icon "street-view", text: "Click Here to View Meetup Location"%>
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+		<div class="row mx-auto text-center">
       <div class="col"></div>
         <div class="col d-flex justify-content-center">
-          <%= render_gmap_coordinate_picker api_key: ENV["MAPS_API_KEY"], 'static'  => 'true', :default_coordinates => [@post.latitude,@post.longitude] , :zoom_level => 10, :map_width => '300px', :map_height => '200px'  %>
+          <%= render_gmap_coordinate_picker api_key: ENV["MAPS_API_KEY"], 'static'  => 'true', :default_coordinates => [@post.latitude,@post.longitude] , :zoom_level => 10  %>
         </div>
-      <div class="col"></div>
-    </div>
+      	<div class="col"></div>
+  	</div>
+  </div>
+</div>
+
+
+	
 
 	<% if @books.blank? %>
 	    <h3>No Books Yet</h3>
