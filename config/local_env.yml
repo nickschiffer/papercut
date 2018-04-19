@@ -13,4 +13,3 @@ AWS_BUCKET_NAME: 'sample bucket'
 AWS_ACCESS_KEY_ID: 'accesskeyID'
 RAILS_ENV: 'development'
 MAPS_API_KEY: '123456789123493291492'
-

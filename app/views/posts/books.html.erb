@@ -3,20 +3,27 @@
 
 
   <%= render "layouts/partials/nav" %>
-</p>
+  <br />
+  <br /> 
   <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    Search
+    <%=fa_icon "search", text: "Looking for Something Specific? Click Here!"%>
   </button>
 </p>
 <div class="collapse" id="collapseExample">
   <div class="card card-body">
-    Title:<br />
-    Author:<br />
-    Condition:<br />
-    ISBN:<br />
-    Price:<br />
+    <%= form_tag(books_post_path, method: :get, class: "form-inline", role: 'search') do %>
+      <div class="input-group">
+      <%= text_field_tag :term, params[:term], placeholder: 'Title, Author, or ISBN', class: 'form-control' %>
+        <div class="input-group-btn search-panel">
+          <%= link_to 'Clear', books_post_url, class: "btn btn-default" %>
+          <%= submit_tag 'Search', name: nil, class: "btn btn-success" %>
+        </div>
+      </div>
+    <% end %> 
+
   </div>
 </div>
+
 
 
   <% if @allbooks.blank? %>
