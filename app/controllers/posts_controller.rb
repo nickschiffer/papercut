@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy], unless: -> {params[:id] == "books"}
 
   # GET /posts
   # GET /posts.json
@@ -30,6 +30,29 @@ class PostsController < ApplicationController
     @replies = Reply.where(post_id: @post.id)
     @books   = Book.where(post_id: @post.id)
     @user    = User.find(@post.user_id)
+  end
+
+  def books
+    search = params[:term].present? ? params[:term] : nil
+    @allbooks = if search
+      Book.where("title LIKE ? OR author LIKE ? or ISBN LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+    else
+      @allbooks = Book.all
+    end
+  end
+
+  def searchbooks
+
+  end
+
+  def autocomplete
+    render json: Book.search(params[:query], {
+      fields: ["title^5", "author", "ISBN"],
+      match: :word_start,
+      limit: 10,
+      load: false,
+      misspellings: {below: 5}
+    }).map(&:title)
   end
 
   # GET /posts/new
@@ -85,7 +108,7 @@ class PostsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
-      @post = Post.find(params[:id])
+        @post = Post.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

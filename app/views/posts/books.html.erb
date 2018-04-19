@@ -1,0 +1,62 @@
+<% provide(:page_title, 'All Books') %>
+<p id="notice"><%= notice %></p>
+<% javascript_include_tag "posts" %>
+<% javascript_include_tag "typeahead.bundle" %>
+<% javascript_include_tag "turbolinks" %>
+
+
+  <%= render "layouts/partials/nav" %>
+  <br />
+  <br /> 
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    <%=fa_icon "search", text: "Looking for Something Specific? Click Here!"%>
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    <%= form_tag(books_posts_path, method: :get, class: "form-inline", role: 'search') do %>
+      <div class="input-group">
+      <%= text_field_tag :term, params[:term], id: "books_search", autocomplete: :off, placeholder: 'Title, Author, or ISBN', class: 'form-control' %>
+        <div class="input-group-btn search-panel">
+          <%= link_to 'Clear', books_posts_url, class: "btn btn-default" %>
+          <%= submit_tag 'Search', name: nil, class: "btn btn-success" %>
+        </div>
+      </div>
+    <% end %> 
+
+  </div>
+</div>
+
+
+
+  <% if @allbooks.blank? %>
+    <h3>No Books Yet</h3>
+      <%= link_to new_post_path, class: 'btn btn-success' do %>
+        <span>
+            <i class="fa fa-plus"></i>
+            Create a Post?
+        </span>
+      <% end %>
+  <% else %>
+  
+   <%= link_to new_post_path, class: 'btn btn-success' do %>
+      <span>
+        <i class="fa fa-plus"></i>
+        New Post
+      </span>
+    <% end %>
+    <br></br>
+      
+    <div class="row">
+      <%= render @allbooks %>
+    </div>
+    <%= link_to new_post_path, class: 'btn btn-success' do %>
+      <span>
+        <i class="fa fa-plus"></i>
+        New Post
+      </span>
+    <% end %>
+  <% end %>
+<br>
+
+
