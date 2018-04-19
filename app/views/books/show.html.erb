@@ -56,11 +56,25 @@
 <% if @user.id == current_user.id %>
 <%= link_to fa_icon('fa-pen-square')+"Edit", {:action => "edit", :id => @book.id, :post_id => @post.id}, :class => "btn btn-primary" %>
   |
+<% else %>
+  <%= link_to new_sale_path(:id => params[:book_id], current_user.id=> params[:buyer_id], @book.user_id => params[:seller_id]), class: 'btn btn-primary' do %>
+    <span>
+      <i class="fa fa-shopping-cart"></i>
+      Buy This Book!
+    </span> |
+  <% end %>
+<% end %>
+<%= link_to new_sale_path(:book_id => @book.id, :buyer_id => current_user.id, :seller_id => @book.user_id), class: 'btn btn-primary' do %>
+  <span>
+  <i class="fa fa-shopping-cart"></i>
+  Buy This Book!
+  </span>
 <% end %>
 <%= link_to post_path(@book.post_id), class: 'btn btn-primary' do %>
   <span>
   <i class="fa fa-backward"></i>
   Back
   </span>
+
 <% end %>
 </div>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :sales
   get 'posts/:post_id/replies/new', to: 'replies#new', as: "new_reply_to_post"
   post 'posts/:post_id/replies', to: 'replies#create'
 
@@ -10,7 +11,8 @@ Rails.application.routes.draw do
   # patch 'posts/:post_id/books/:id/edit', to: 'books#update', as: "edit_book"
   # put 'posts/:post_id/books/:id/edit', to: 'books#update'
 
-  resources :books, :except => [:index]
+  resources :sales, :except   => [:index]
+  resources :books, :except   => [:index]
   resources :replies, :except => [:index]
   resources :posts do
    collection do

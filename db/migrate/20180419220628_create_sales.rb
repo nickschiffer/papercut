@@ -1,11 +1,10 @@
 class CreateSales < ActiveRecord::Migration[5.1]
   def change
     create_table :sales do |t|
-      t.integer :seller_id
       t.integer :buyer_id
-
-      t.belongs_to :user
-
+      t.integer :seller_id
+      t.integer :book_id
+      t.integer :state, :default => 0
       t.timestamps
     end
   end

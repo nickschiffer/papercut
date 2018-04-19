@@ -45,6 +45,10 @@
   <%# form.label :post_id %>
   <%= form.hidden_field :post_id, value: params[:post_id] %>
   </div>
+  <div>
+  <%# form.label :post_id %>
+  <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
 
   <div class="mx-auto text-center">
     <%= form.submit "Submit", :class => "btn btn-success" %>

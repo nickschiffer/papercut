@@ -5,6 +5,7 @@ class CreateBooks < ActiveRecord::Migration[5.1]
       t.string :author
       t.string :condition
       t.string :ISBN
+      t.integer :user_id
       t.float :value, :default => 0.00
       
       t.belongs_to :post
