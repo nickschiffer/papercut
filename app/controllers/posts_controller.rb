@@ -45,6 +45,16 @@ class PostsController < ApplicationController
 
   end
 
+  def autocomplete
+    render json: Book.search(params[:query], {
+      fields: ["title^5", "author", "ISBN"],
+      match: :word_start,
+      limit: 10,
+      load: false,
+      misspellings: {below: 5}
+    }).map(&:title)
+  end
+
   # GET /posts/new
   def new
     @post = Post.new

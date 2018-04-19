@@ -1,5 +1,8 @@
 <% provide(:page_title, 'All Books') %>
 <p id="notice"><%= notice %></p>
+<% javascript_include_tag "posts" %>
+<% javascript_include_tag "typeahead.bundle" %>
+<% javascript_include_tag "turbolinks" %>
 
 
   <%= render "layouts/partials/nav" %>
@@ -11,11 +14,11 @@
 </p>
 <div class="collapse" id="collapseExample">
   <div class="card card-body">
-    <%= form_tag(books_post_path, method: :get, class: "form-inline", role: 'search') do %>
+    <%= form_tag(books_posts_path, method: :get, class: "form-inline", role: 'search') do %>
       <div class="input-group">
-      <%= text_field_tag :term, params[:term], placeholder: 'Title, Author, or ISBN', class: 'form-control' %>
+      <%= text_field_tag :term, params[:term], id: "books_search", autocomplete: :off, placeholder: 'Title, Author, or ISBN', class: 'form-control' %>
         <div class="input-group-btn search-panel">
-          <%= link_to 'Clear', books_post_url, class: "btn btn-default" %>
+          <%= link_to 'Clear', books_posts_url, class: "btn btn-default" %>
           <%= submit_tag 'Search', name: nil, class: "btn btn-success" %>
         </div>
       </div>
