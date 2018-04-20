@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<br /><br />
 <% if ((current_user.id == @sale.seller_id) && @sale.state == 0) %>
     <% if @sale.trade_id != nil %>
         <%= render "layouts/partials/sales/seller_with_trade_state_0" %>
