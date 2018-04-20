@@ -5,16 +5,16 @@ class UsersController < ApplicationController
         end
 
         def inprogress_sells
-            @sales = Sale.where(seller_id: @user.id)
+            @sales = Sale.where(["seller_id = ? AND state = ?", @user.id, 0])
 
         end
 
         def inprogress_buys
-            @sales = Sale.where(buyer_id: @user.id)
+            @sales = Sale.where(["buyer_id = ? AND state = ?", @user.id, 0])
         end
 
         def concluded_transactions
-            @sales = Sale.where(["buyer_id = ? OR seller_id = ?) AND state = 1", @user.id, @user.id])
+            @sales = Sale.where(["(buyer_id = ? OR seller_id = ?) AND state = ?", @user.id, @user.id, 1])
         end
 
     private
