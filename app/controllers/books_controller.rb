@@ -26,9 +26,7 @@ class BooksController < ApplicationController
     @post = Post.find(@book.post_id)
   end
 
-  def toggle_visibility
-    book.visiblity.toggle!
-  end
+  
 
   # POST /books
   # POST /books.json
