@@ -1,0 +1,22 @@
+<section class="container-fluid d-flex justify-content-center">
+  <nav class="container">
+    <ul class="nav nav-pills nav-fill">
+      <li class="nav-item">
+        <%= link_to user_inprogress_transactions_path, class: action_name == 'inprogress_transactions' ? 'nav-link active' : 'nav-link'  do %>
+          <span>
+            <i class="fa fa-spinner"></i>
+            Transactions in Progess
+          </span>
+		<% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to user_concluded_transactions_path, class: action_name == 'concluded_transactions' ? 'nav-link active' : 'nav-link' do %>
+          <span>
+			<i class="fa fa-history"></i>
+			Transaction History
+		  </span>
+        <% end %>
+      </li>
+    </ul>
+  </nav>
+</section>

@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :sales
   get 'posts/:post_id/replies/new', to: 'replies#new', as: "new_reply_to_post"
   post 'posts/:post_id/replies', to: 'replies#create'
 
@@ -10,8 +9,11 @@ Rails.application.routes.draw do
   get 'posts/:post_id/books/edit', to: 'books#edit'
   # patch 'posts/:post_id/books/:id/edit', to: 'books#update', as: "edit_book"
   # put 'posts/:post_id/books/:id/edit', to: 'books#update'
-
-  resources :sales, :except   => [:index]
+  #resources :users, controller: 'users', only: [:overview, :inprogess_transactions, :concluded_transactions]
+  get 'users/overview', to: "users#overview", as: "user_overview"
+  get 'users/inprogress_transactions', to: "users#inprogress_transactions", as: "user_inprogress_transactions"
+  get 'users/concluded_transactions', to: "users#concluded_transactions", as: "user_concluded_transactions"
+  resources :sales, :except   => [:index, :edit]
   resources :books, :except   => [:index]
   resources :replies, :except => [:index]
   resources :posts do
