@@ -10,6 +10,22 @@ class SalesController < ApplicationController
   # GET /sales/1
   # GET /sales/1.json
   def show
+    @book = Book.find(@sale.book_id)
+    @buyer = User.find(@sale.buyer_id)
+    @seller = User.find(@sale.seller_id)
+    if @sale.trade_id != nil
+      @trade = Book.find(@sale.trade_id)
+      @body_text = "#{@buyer.first_name} wants to trade with you"
+    end
+    @state = case @sale.state
+    when 0
+      "Waiting on Your Input"
+    when 1
+      "Finished"
+    else
+      "Something's Not Right"
+    end
+
   end
 
   # GET /sales/new
@@ -21,13 +37,30 @@ class SalesController < ApplicationController
   def edit
   end
 
+  def advance_state
+    sale = Sale.find(params[:id])
+    sale.update(state: (sale.state+1))
+    redirect_to root_path
+
+  end
+
   # POST /sales
   # POST /sales.json
   def create
     @sale = Sale.new(sale_params)
+    
+    
 
     respond_to do |format|
       if @sale.save
+        book = Book.find(@sale.book_id)
+        if @sale.trade_id != nil
+          trade = Book.find(@sale.trade_id)
+          trade.make_invisible
+        end
+        book.make_invisible
+        # @book.toggle(:visibility)
+        # @trade.toggle(:visibility)
         format.html { redirect_to @sale, notice: 'Sale was successfully created.' }
         format.json { render :show, status: :created, location: @sale }
       else
@@ -54,9 +87,15 @@ class SalesController < ApplicationController
   # DELETE /sales/1
   # DELETE /sales/1.json
   def destroy
+    book = Book.find(@sale.book_id)
+        if @sale.trade_id != nil
+          trade = Book.find(@sale.trade_id)
+          trade.make_visible
+        end
+    book.make_visible
     @sale.destroy
     respond_to do |format|
-      format.html { redirect_to sales_url, notice: 'Sale was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'Sale was successfully cancelled.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +108,6 @@ class SalesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sale_params
-      params.require(:sale).permit(:buyer_id, :seller_id, :book_id)
+      params.require(:sale).permit(:buyer_id, :seller_id, :book_id, :trade_id)
     end
 end

@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20180419220628) do
     t.string "ISBN"
     t.integer "user_id"
     t.float "value", default: 0.0
+    t.boolean "visibility", default: true
     t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -71,6 +72,7 @@ ActiveRecord::Schema.define(version: 20180419220628) do
     t.integer "buyer_id"
     t.integer "seller_id"
     t.integer "book_id"
+    t.integer "trade_id"
     t.integer "state", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

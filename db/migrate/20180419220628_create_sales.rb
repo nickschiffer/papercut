@@ -4,6 +4,7 @@ class CreateSales < ActiveRecord::Migration[5.1]
       t.integer :buyer_id
       t.integer :seller_id
       t.integer :book_id
+      t.integer :trade_id
       t.integer :state, :default => 0
       t.timestamps
     end

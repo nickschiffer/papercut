@@ -7,7 +7,8 @@ class PostsController < ApplicationController
     @posts = Post.all
     @images = []
     @posts.each do |post|
-      @books_tmp = Book.where(post_id: post.id)
+      #@books_tmp = Book.where(post_id: post.id)
+      @books_tmp = Book.where(["post_id = ? AND visibility = 't'", post.id])
       if @books_tmp.empty?
         post.image = ActionController::Base.helpers.asset_url("book_placeholder_thumb.png", type: :image)
       else
@@ -28,16 +29,17 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @replies = Reply.where(post_id: @post.id)
-    @books   = Book.where(post_id: @post.id)
+    #@books   = Book.where(post_id: @post.id)
+    @books    = Book.where(["post_id = ? AND visibility = 't'", @post.id])
     @user    = User.find(@post.user_id)
   end
 
   def books
     search = params[:term].present? ? params[:term] : nil
     @allbooks = if search
-      Book.where("title LIKE ? OR author LIKE ? or ISBN LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+      Book.where(["(title LIKE ? OR author LIKE ? OR ISBN LIKE ? ) AND visibility = 't'", search, search, search])
     else
-      @allbooks = Book.all
+      @allbooks = Book.where("visibility = 't'")
     end
   end
 

@@ -11,10 +11,19 @@ Rails.application.routes.draw do
   # put 'posts/:post_id/books/:id/edit', to: 'books#update'
   #resources :users, controller: 'users', only: [:overview, :inprogess_transactions, :concluded_transactions]
   get 'users/overview', to: "users#overview", as: "user_overview"
-  get 'users/inprogress_transactions', to: "users#inprogress_transactions", as: "user_inprogress_transactions"
+  get 'users/inprogress_sells', to: "users#inprogress_sells", as: "user_inprogress_sells"
+  get 'users/inprogress_buys', to: "users#inprogress_buys", as: "user_inprogress_buys"
   get 'users/concluded_transactions', to: "users#concluded_transactions", as: "user_concluded_transactions"
-  resources :sales, :except   => [:index, :edit]
-  resources :books, :except   => [:index]
+  resources :sales, :except   => [:index, :edit] do
+    member do
+      patch 'advance_state'
+    end
+  end
+  resources :books, :except   => [:index] do
+    member do
+      patch 'toggle_visibility'
+    end
+  end
   resources :replies, :except => [:index]
   resources :posts do
    collection do

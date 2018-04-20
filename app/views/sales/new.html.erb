@@ -1,6 +1,7 @@
-<h1>New Sale</h1>
+<% provide(:page_title, 'New Sale') %>
+<%= stylesheet_link_tag 'devise' %>
+<h1 class="text-center mx-auto">New Sale</h1>
 
 <%= render 'form', sale: @sale %>
-<%# raise %>
 
-<%= link_to 'Back', sales_path %>
+<%= link_to 'Back', :back %>

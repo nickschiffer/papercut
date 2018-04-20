@@ -7,6 +7,8 @@ class CreateBooks < ActiveRecord::Migration[5.1]
       t.string :ISBN
       t.integer :user_id
       t.float :value, :default => 0.00
+      t.boolean :visibility, :default => true
+      
       
       t.belongs_to :post
       
