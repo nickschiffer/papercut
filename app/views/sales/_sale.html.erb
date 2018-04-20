@@ -34,13 +34,15 @@
 				  		<i class="fa fa-eye"></i>
 				  		View
 				  	</span>
-				<% end %> 
-			        <%= link_to sale, method: :delete, data: { confirm: 'Are you sure? This will cancel the sale' }, class: 'btn btn-danger' do %>
-				        <span>
-					  		<i class="fa fa-trash"></i>
-					  		Delete
-					  	</span>
-			    <% end %>
+				<% end %>
+				<% if sale.state < 1 %> 
+					<%= link_to sale, method: :delete, data: { confirm: 'Are you sure? This will cancel the sale' }, class: 'btn btn-danger' do %>
+						<span>
+							<i class="fa fa-trash"></i>
+							Delete
+						</span>
+					<% end %>
+				<% end %>
 			</div>
 		</div>
 	</div>	

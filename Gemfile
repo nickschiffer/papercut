@@ -72,6 +72,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   # Use sqlite3 as the database for Active Record
   #gem 'sqlite3'
+  gem 'solargraph'
 end
 
 group :development do
@@ -85,6 +86,7 @@ group :development do
   gem 'sqlite3'
   gem "better_errors"
   gem "binding_of_caller" 
+  gem 'solargraph'
 end
 
 group :production do
