@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 20180425033657) do
     t.string "trade_title"
     t.string "trade_author"
     t.string "trade_isbn"
-    t.string "payment_menthod"
+    t.string "payment_method"
     t.float "amount", default: 0.0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

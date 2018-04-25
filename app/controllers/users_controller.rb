@@ -14,7 +14,7 @@ class UsersController < ApplicationController
         end
 
         def concluded_transactions
-            @sales = Sale.where(["(buyer_id = ? OR seller_id = ?) AND state = ?", @user.id, @user.id, 2])
+            @receipts = Receipt.where(["(buyer_id = ? OR seller_id = ?)", @user.id, @user.id])
         end
 
     private

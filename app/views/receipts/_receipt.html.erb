@@ -1,0 +1,24 @@
+<ul class="list-group">
+    <li class="list-group-item"><%=receipt.created_at.strftime("Date Completed: %c")%> <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#receipt<%=receipt.id%>" aria-expanded="false" aria-controls="collapseExample">
+    View Details
+    </button></li>
+</ul>
+   <div class ="collapse" id="receipt<%=receipt.id%>"> 
+    <ul class="list-group">
+    <li class="list-group-item">Buyer Name: <%= receipt.buyer_firstname%> <%=receipt.buyer_lastname %></li>
+    <li class="list-group-item">Buyer Email: <%= mail_to(receipt.buyer_email)%></li>
+    <li class="list-group-item">Seller Name: <%= receipt.seller_firstname%> <%=receipt.seller_lastname %></li>
+    <li class="list-group-item">Seller Email: <%= mail_to(receipt.seller_email)%></li>
+    <li class="list-group-item">Book Title: <%= receipt.book_title%></li>
+    <li class="list-group-item">Book Author: <%= receipt.book_author%></li>
+    <li class="list-group-item">Book ISBN: <%= receipt.book_isbn%></li>
+    <% if (receipt.trade_title != nil) %>
+        <li class="list-group-item">Trade Title: <%= receipt.trade_title%></li>
+        <li class="list-group-item">Trade Author: <%= receipt.trade_author%></li>
+        <li class="list-group-item">Trade ISBN: <%= receipt.trade_isbn%></li>
+    <% end %>
+    <li class="list-group-item">Payment Method: <%= receipt.payment_method%></li>
+    <li class="list-group-item">Amount: <%= "$#{'%.2f' % receipt.amount}"%></li>
+
+</ul>
+</div>

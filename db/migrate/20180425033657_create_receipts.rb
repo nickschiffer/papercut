@@ -15,7 +15,7 @@ class CreateReceipts < ActiveRecord::Migration[5.1]
       t.string :trade_title
       t.string :trade_author
       t.string :trade_isbn
-      t.string :payment_menthod
+      t.string :payment_method
       t.float :amount, :default => 0.00
 
       t.timestamps
