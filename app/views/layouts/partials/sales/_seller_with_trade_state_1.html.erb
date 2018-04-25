@@ -1,15 +1,28 @@
 <div class="jumbotron">
-  <h1 class="display-4">Congrats <%= @seller.first_name%> <%=@seller.last_name%>! Your trade is complete.</h1>
-  <p class="lead">It looks like you traded <%=link_to "#{@book.title}", book_path(@book) %> 
+  <h1 class="display-4">Congrats <%= @seller.first_name%> <%=@seller.last_name%>! You've got a buyer.</h1>
+  <p class="lead">It looks like you're trading <%=link_to "#{@book.title}", book_path(@book) %> 
     by <%=@book.author %> worth 
     <%= "$#{'%.2f' % @book.value}" %> 
     for <%= @buyer.first_name %> <%= @buyer.last_name %>'s
     <%=link_to "#{@trade.title}", book_path(@trade) %> 
     by <%=@trade.author%> 
-    which they valued at 
+    which they value at 
     <%= "$#{'%.2f' % @trade.value}" %>.</p>
   <hr class="my-4">
-  <p><%= @buyer.first_name %> <% @buyer.last_name %> 
-    paid you <%= "$#{'%.2f' % (@book.value - @trade.value)}" %> and you got a new book. How about that. Hope to see you again soon.</p>
+  <p>This brings the amount <%= @buyer.first_name %> <% @buyer.last_name %> 
+    owes you from <%= "$#{'%.2f' % @book.value}" %> to <%= "$#{'%.2f' % (@book.value - @trade.value)}" %>. 
+    <% if @sale.verified_by_seller == true %>
+    We're currently waiting on receipt confirmation from <%= @seller.first_name %>, hang in there and check back soon. </p>
+    <% end %>
+    <% if @sale.verified_by_seller == false %> 
+    Check back here after you have received the book to confirm receipt.</p>
+    <%= link_to fa_icon('thumbs-up')+"Received my Book!", advance_state_sale_path(@sale), method: :patch, class: "btn btn-success btn-lg" %>
+  <% end %>
   <%# link_to fa_icon('fa-thumbs-up')+"Yes", :class => "btn btn-success" %>
+  <%= link_to @sale, method: :delete, data: { confirm: 'Are you sure? This will cancel the transaction' }, class: 'btn btn-danger btn-lg' do %> 
+		<span>
+			<i class="fa fa-thumbs-down"></i>
+			No
+		</span>
+	<% end %>
 </div>

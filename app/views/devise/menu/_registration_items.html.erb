@@ -1,11 +1,24 @@
 <% if user_signed_in? %>
   
-  <%= link_to user_inprogress_sells_path, class: 'btn btn-warning' do%>
-  	<span>
-  		<i class="fa fa-shopping-cart"></i>
-  		My Transactions
-  	</span>
-  <% end %>
+
+	<% @sales = Sale.where(["(buyer_id = ? OR seller_id = ?) AND state < ?", current_user.id, current_user.id, 2]) %>
+
+
+	<% if @sales.count > 0 %>
+		<%= link_to user_inprogress_sells_path, class: 'btn btn-warning' do%>
+			<span>
+				<i class="fa fa-shopping-cart"></i>
+				My Transactions <span class="badge badge-danger"><%=@sales.count%></span>
+			</span>
+		<% end %>
+	<% else %>
+		<%= link_to user_inprogress_sells_path, class: 'btn btn-warning' do%>
+			<span>
+				<i class="fa fa-shopping-cart"></i>
+				My Transactions
+			</span>
+		<% end %>
+	<% end %>
 	
 	<%= link_to edit_user_registration_path, class: 'btn btn-warning' do%>
   	<span>

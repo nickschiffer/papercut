@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180419220628) do
+ActiveRecord::Schema.define(version: 20180425033657) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
@@ -56,6 +56,27 @@ ActiveRecord::Schema.define(version: 20180419220628) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "receipts", force: :cascade do |t|
+    t.string "buyer_id"
+    t.string "buyer_firstname"
+    t.string "buyer_lastname"
+    t.string "buyer_email"
+    t.string "seller_id"
+    t.string "seller_firstname"
+    t.string "seller_lastname"
+    t.string "seller_email"
+    t.string "book_title"
+    t.string "book_author"
+    t.string "book_isbn"
+    t.string "trade_title"
+    t.string "trade_author"
+    t.string "trade_isbn"
+    t.string "payment_method"
+    t.float "amount", default: 0.0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "replies", force: :cascade do |t|
     t.text "body"
     t.string "slug"
@@ -74,6 +95,8 @@ ActiveRecord::Schema.define(version: 20180419220628) do
     t.integer "book_id"
     t.integer "trade_id"
     t.integer "state", default: 0
+    t.boolean "verified_by_buyer", default: false
+    t.boolean "verified_by_seller", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

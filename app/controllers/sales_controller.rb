@@ -39,9 +39,55 @@ class SalesController < ApplicationController
 
   def advance_state
     sale = Sale.find(params[:id])
-    sale.update(state: (sale.state+1))
-    redirect_to root_path
-
+    if sale.state == 0
+      sale.update(state: (1))
+      redirect_to root_path
+    elsif sale.state == 1
+      if current_user.id == sale.buyer_id
+        if (sale.trade_id != nil) && (sale.verified_by_buyer == false)
+          sale.update(verified_by_buyer: (true))
+        end
+        if (sale.trade_id != nil) && (sale.verified_by_seller == true)
+          sale.update(verified_by_buyer: (true))
+          sale.update(state: (2))
+          sale.generate_receipt()
+          sale.cleanup()
+          redirect_to root_path
+          return
+        end
+        if (sale.trade_id == nil)
+          sale.update(state: (2))
+          sale.generate_receipt()
+          sale.cleanup()
+          redirect_to root_path
+          return
+        end
+        redirect_to root_path
+      end
+      if current_user.id == sale.seller_id
+        if (sale.trade_id != nil) && (sale.verified_by_seller == false)
+          sale.update(verified_by_seller: (true))
+        end
+        if (sale.trade_id != nil) && (sale.verified_by_buyer == true)
+          sale.update(verified_by_seller: (true))
+          sale.update(state: (2))
+          sale.generate_receipt()
+          sale.cleanup()
+          redirect_to root_path
+          return
+        end
+        if (sale.trade_id == nil)
+          sale.update(state: (2))
+          sale.generate_receipt()
+          sale.cleanup()
+          redirect_to root_path
+          return
+        end
+        redirect_to root_path
+      end
+    else
+      redirect_to root_path
+    end
   end
 
   # POST /sales

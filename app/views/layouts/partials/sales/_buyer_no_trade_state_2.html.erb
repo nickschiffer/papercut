@@ -1,0 +1,10 @@
+<div class="jumbotron">
+  <h1 class="display-4">Congrats <%= @buyer.first_name%> <%=@buyer.last_name%>! Your purchase is complete.</h1>
+  <p class="lead">You bought <%=link_to "#{@book.title}", book_path(@book) %> 
+    by <%=@book.author %> for 
+    <%= "$#{'%.2f' % @book.value}" %> 
+    from <%= @seller.first_name %> <%= @seller.last_name %>. </p>
+  <hr class="my-4">
+  <p>Your payment method has been charged <%= "$#{'%.2f' % @book.value}" %>. Hope to see you again soon.</p>
+  <%# link_to fa_icon('fa-thumbs-up')+"Yes", :class => "btn btn-success" %>
+</div>
