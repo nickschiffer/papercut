@@ -27,6 +27,20 @@
         <%= render "layouts/partials/sales/buyer_no_trade_state_1" %>
     <% end %>
 <% end %>
+<% if ((current_user.id == @sale.seller_id) && @sale.state == 2) %>
+    <% if @sale.trade_id != nil %>
+        <%= render "layouts/partials/sales/seller_with_trade_state_2" %>
+    <% else %>
+        <%= render "layouts/partials/sales/seller_no_trade_state_2" %>
+    <% end %>
+<% end %>
+<% if ((current_user.id == @sale.buyer_id) && @sale.state == 2) %>
+    <% if @sale.trade_id != nil %>
+        <%= render "layouts/partials/sales/buyer_with_trade_state_2" %>
+    <% else %>
+        <%= render "layouts/partials/sales/buyer_no_trade_state_2" %>
+    <% end %>
+<% end %>
 <% if ((current_user.id == @sale.buyer_id) or (current_user.id == @sale.seller_id)) && @sale.state == 0 %>
     <%= link_to @sale, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do %> 
 		<span>
