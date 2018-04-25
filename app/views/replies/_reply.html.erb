@@ -11,9 +11,9 @@
                 <%= link_to "Reply", reply, class: 'card-title' %>
                 </h4>
 				<p class="card-text"><%= truncate(reply.body, length: 130) %></p>
-				<p class="published-date">Published <%= reply.created_at%></p>
+				<p class="published-date"><%=reply.created_at.strftime("Reply Created: %c")%></p>
 				<% if reply.created_at != reply.updated_at %>
-				    <p class="published-date">Updated <%= reply.updated_at%></p>
+				    <p class="published-date"><%=reply.updated_at.strftime("Reply Updated: %c")%></p>
 				<% else %>
 				<br>
 				<% end %>

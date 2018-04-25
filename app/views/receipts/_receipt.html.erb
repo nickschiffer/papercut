@@ -1,6 +1,6 @@
-<ul class="list-group">
+<ul class="list-group mx-auto text-center">
     <li class="list-group-item"><%=receipt.created_at.strftime("Date Completed: %c")%> <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#receipt<%=receipt.id%>" aria-expanded="false" aria-controls="collapseExample">
-    View Details
+    <%=fa_icon "info-circle", text: "View"%>
     </button></li>
 </ul>
    <div class ="collapse" id="receipt<%=receipt.id%>"> 
