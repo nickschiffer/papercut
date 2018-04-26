@@ -21,3 +21,4 @@
 //=require posts
 //=require_tree .
 //=require bootstrap/js/bootstrap.bundle.min.js
+//=require bootstrap-datepicker

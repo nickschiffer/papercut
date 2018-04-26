@@ -31,7 +31,7 @@ class Sale < ApplicationRecord
         @buyer = User.find(self.buyer_id)
         @seller = User.find(self.seller_id)
         @book = Book.find(self.book_id)
-        @receipt = Receipt.create( buyer_id: (@buyer.id), buyer_firstname: (@buyer.first_name), buyer_lastname: (@buyer.last_name), buyer_email: (@buyer.email), seller_id: (@seller.id), seller_firstname: (@seller.first_name), seller_lastname: (@seller.last_name), seller_email: (@seller.email), book_title: (@book.title), book_author: (@book.author), book_isbn: (@book.ISBN), amount: (@book.value))
+        @receipt = Receipt.create( payment_method: (@buyer.payment_method), buyer_id: (@buyer.id), buyer_firstname: (@buyer.first_name), buyer_lastname: (@buyer.last_name), buyer_email: (@buyer.email), seller_id: (@seller.id), seller_firstname: (@seller.first_name), seller_lastname: (@seller.last_name), seller_email: (@seller.email), book_title: (@book.title), book_author: (@book.author), book_isbn: (@book.ISBN), amount: (@book.value))
         @receipt.save!
         if self.trade_id != nil
             @trade = Book.find(self.trade_id)

@@ -1,0 +1,15 @@
+<div class="jumbotron">
+  <h1 class="display-4">Congrats <%= @seller.first_name%> <%=@seller.last_name%>! You're on your way to selling a book.</h1>
+  <p class="lead">It looks like you're selling <%=link_to "#{@book.title}", book_path(@book) %> 
+    by <%=@book.author %> worth 
+    <%= "$#{'%.2f' % @book.value}" %>.
+  <hr class="my-4">
+  <p>Your total gain is <%= "$#{'%.2f' % @book.value}" %>. We're currently waiting on receipt verification from <%= @buyer.first_name %>, hang in there and check back soon. </p>
+  <%# link_to fa_icon('fa-thumbs-up')+"Yes", :class => "btn btn-success" %>
+  <%= link_to @sale, method: :delete, data: { confirm: 'Are you sure? This will cancel the sale' }, class: 'btn btn-danger' do %>
+        <span>
+        <i class="fa fa-trash"></i>
+        Cancel?
+      </span>
+  <% end %>
+</div>
