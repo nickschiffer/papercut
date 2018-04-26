@@ -1,3 +1,4 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :null_session
+  protect_from_forgery with: :null_session, prepend: true
+  before_action :authenticate_user!, except: :home
 end
