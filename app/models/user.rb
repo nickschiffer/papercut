@@ -23,7 +23,7 @@ class User < ApplicationRecord
   
   has_many :posts, dependent: :destroy
   has_many :replies, dependent: :destroy
-  has_many :sales, dependent: :destroy
+  #has_many :sales, dependent: :destroy
   has_many :payments, dependent: :destroy
 
 

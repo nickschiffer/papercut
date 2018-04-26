@@ -156,4 +156,7 @@ class SalesController < ApplicationController
     def sale_params
       params.require(:sale).permit(:buyer_id, :seller_id, :book_id, :trade_id)
     end
+
+    
+
 end
