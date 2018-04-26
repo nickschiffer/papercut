@@ -35,13 +35,18 @@
 	  	<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 	    	<ul class="navbar-nav ml-auto mr-2 mt-rg-0">
 	      		
-            
+            <% if current_user.try(:admin?) %>
+              <li class="nav-item">
+              <%= render 'devise/menu/admin_items' %>
+              </li>
+            <% else %>
             <li class="nav-item">
               <%= render 'devise/menu/login_items' %>
             </li>
             <li class="nav-item">
               <%= render 'devise/menu/registration_items' %>
             </li>
+            <% end %>
 	    	</ul>
 	    	
 	  	</div>

@@ -25,4 +25,10 @@ class User < ApplicationRecord
   has_many :replies, dependent: :destroy
   has_many :sales, dependent: :destroy
   has_many :payments, dependent: :destroy
+
+
+  def admin?
+    self.isAdmin == true # If you have id == 0 for admin
+  end
+  
 end
