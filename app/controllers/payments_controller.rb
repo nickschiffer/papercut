@@ -15,6 +15,7 @@ class PaymentsController < ApplicationController
   # GET /payments/new
   def new
     @payment = Payment.new
+    @user = User.find(params[:user_id])
   end
 
   # GET /payments/1/edit
@@ -25,10 +26,12 @@ class PaymentsController < ApplicationController
   # POST /payments.json
   def create
     @payment = Payment.new(payment_params)
+    @user = User.find(@payment.user_id)
 
     respond_to do |format|
       if @payment.save
-        format.html { redirect_to @payment, notice: 'Payment was successfully created.' }
+        @user.update(payment_verified: true)
+        format.html { redirect_to root_path, notice: 'Payment Information was successfully added.' }
         format.json { render :show, status: :created, location: @payment }
       else
         format.html { render :new }
@@ -69,6 +72,6 @@ class PaymentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def payment_params
-      params.require(:payment).permit(:payment_method, :address, :city, :state, :zip, :credit_card_number, :credit_card_cvc, :credit_card_exp, :paypal_email, :paypal_password, :zelle_email, :zelle_password)
+      params.require(:payment).permit(:user_id, :payment_method, :address, :city, :state, :zip, :credit_card_number, :credit_card_cvc, :credit_card_exp, :paypal_email, :paypal_password, :zelle_email, :zelle_password)
     end
 end

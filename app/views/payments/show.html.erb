@@ -24,6 +24,7 @@
   <strong>Zip:</strong>
   <%= @payment.zip %>
 </p>
+<% if @payment.payment_method == "Credit" %>
 
 <p>
   <strong>Credit card number:</strong>
@@ -39,26 +40,20 @@
   <strong>Credit card exp:</strong>
   <%= @payment.credit_card_exp %>
 </p>
+<% elsif @payment.payment_method == "Paypal" %>
 
 <p>
   <strong>Paypal email:</strong>
   <%= @payment.paypal_email %>
 </p>
 
-<p>
-  <strong>Paypal password:</strong>
-  <%= @payment.paypal_password %>
-</p>
-
+<% else %>
 <p>
   <strong>Zelle email:</strong>
   <%= @payment.zelle_email %>
 </p>
 
-<p>
-  <strong>Zelle password:</strong>
-  <%= @payment.zelle_password %>
-</p>
+<% end %>
 
 <%= link_to 'Edit', edit_payment_path(@payment) %> |
 <%= link_to 'Back', payments_path %>

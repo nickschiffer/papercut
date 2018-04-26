@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :payments
+  resources :payments, :except => [:index]
   resources :receipts
   get 'posts/:post_id/replies/new', to: 'replies#new', as: "new_reply_to_post"
   post 'posts/:post_id/replies', to: 'replies#create'

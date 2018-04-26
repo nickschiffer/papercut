@@ -62,6 +62,7 @@ gem 'gmap_coordinates_picker'
 gem 'searchkick'
 # Figaro for env management
 gem "figaro"
+gem 'bootstrap-datepicker-rails'
 
 
 group :development, :test do

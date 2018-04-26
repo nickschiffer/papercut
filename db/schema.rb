@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180425033657) do
+ActiveRecord::Schema.define(version: 20180426034059) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
@@ -40,6 +40,24 @@ ActiveRecord::Schema.define(version: 20180425033657) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "payment_method"
+    t.string "address"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+    t.string "credit_card_number"
+    t.integer "credit_card_cvc"
+    t.string "credit_card_exp"
+    t.string "paypal_email"
+    t.string "paypal_password"
+    t.string "zelle_email"
+    t.string "zelle_password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "posts", force: :cascade do |t|
@@ -116,6 +134,9 @@ ActiveRecord::Schema.define(version: 20180425033657) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
+    t.string "payment_method", default: "credit_card"
+    t.boolean "payment_verified", default: false
+    t.boolean "isAdmin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

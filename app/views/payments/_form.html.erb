@@ -1,3 +1,10 @@
+
+
+
+
+<div class="title">
+<h2><%= @user.payment_method%></h2>
+</div>
 <%= form_with(model: payment, local: true) do |form| %>
   <% if payment.errors.any? %>
     <div id="error_explanation">
@@ -11,9 +18,9 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :payment_method %>
-    <%= form.text_field :payment_method, id: :payment_payment_method %>
+  <div>
+    <%= form.hidden_field :payment_method, value: @user.payment_method %>
+    <%= form.hidden_field :user_id, value: params[:user_id] %>
   </div>
 
   <div class="field">
@@ -28,29 +35,32 @@
 
   <div class="field">
     <%= form.label :state %>
-    <%= form.text_field :state, id: :payment_state %>
+    <%# form.text_field :state, id: :payment_state %>
+    <%= form.select :state, options_for_select(us_states),{} %>
   </div>
 
   <div class="field">
     <%= form.label :zip %>
-    <%= form.text_field :zip, id: :payment_zip %>
+    <%= form.number_field :zip, id: :payment_zip %>
   </div>
-
+  <% if @user.payment_method == "Credit" %>
   <div class="field">
     <%= form.label :credit_card_number %>
-    <%= form.text_field :credit_card_number, id: :payment_credit_card_number %>
+    <%= form.number_field :credit_card_number,in: 0000000000000000..9999999999999999, step: 1 ,id: :payment_credit_card_number %>
   </div>
 
   <div class="field">
     <%= form.label :credit_card_cvc %>
-    <%= form.number_field :credit_card_cvc, id: :payment_credit_card_cvc %>
+    <%= form.number_field :credit_card_cvc, in: 000..999, step: 1, id: :payment_credit_card_cvc %>
   </div>
 
   <div class="field">
     <%= form.label :credit_card_exp %>
-    <%= form.text_field :credit_card_exp, id: :payment_credit_card_exp %>
+    <%# form.number_field :credit_card_exp, id: :payment_credit_card_exp %>
+    <%= form.text_field :credit_card_exp, data:{ provide:'datepicker', startView: '1', minViewMode: '1' }, id: :payment_credit_card_exp %>
   </div>
-
+<% end %>
+<% if @user.payment_method == "Paypal" %>
   <div class="field">
     <%= form.label :paypal_email %>
     <%= form.text_field :paypal_email, id: :payment_paypal_email %>
@@ -58,9 +68,10 @@
 
   <div class="field">
     <%= form.label :paypal_password %>
-    <%= form.text_field :paypal_password, id: :payment_paypal_password %>
+    <%= form.password_field :paypal_password, id: :payment_paypal_password %>
   </div>
-
+<% end %>
+<% if @user.payment_method == "Zelle" %>
   <div class="field">
     <%= form.label :zelle_email %>
     <%= form.text_field :zelle_email, id: :payment_zelle_email %>
@@ -68,10 +79,10 @@
 
   <div class="field">
     <%= form.label :zelle_password %>
-    <%= form.text_field :zelle_password, id: :payment_zelle_password %>
+    <%= form.password_field :zelle_password, id: :payment_zelle_password %>
   </div>
-
+<% end %>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Submit", :class => "btn btn-lg btn-primary"%>
   </div>
 <% end %>
