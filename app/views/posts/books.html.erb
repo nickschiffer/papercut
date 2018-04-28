@@ -8,6 +8,20 @@
   <%= render "layouts/partials/postsnav" %>
   <br />
   <br /> 
+  
+
+
+
+  <% if @allbooks.blank? %>
+    <h3>No Books Yet</h3>
+      <%= link_to new_post_path, class: 'btn btn-success' do %>
+        <span>
+            <i class="fa fa-plus"></i>
+            Create a Post?
+        </span>
+      <% end %>
+  <% else %>
+
   <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
     <%=fa_icon "search", text: "Looking for Something Specific? Click Here!"%>
   </button>
@@ -26,18 +40,6 @@
 
   </div>
 </div>
-
-
-
-  <% if @allbooks.blank? %>
-    <h3>No Books Yet</h3>
-      <%= link_to new_post_path, class: 'btn btn-success' do %>
-        <span>
-            <i class="fa fa-plus"></i>
-            Create a Post?
-        </span>
-      <% end %>
-  <% else %>
   
    <%= link_to new_post_path, class: 'btn btn-success' do %>
       <span>
