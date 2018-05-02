@@ -1,0 +1,19 @@
+<div class="jumbotron">
+  <h1 class="display-4">Congrats <%= @buyer.first_name%> <%=@buyer.last_name%>! It looks like <%= @seller.first_name %> accepted your offer.</h1>
+  <p class="lead">It looks like you're buying <%=link_to "#{@book.title}", book_path(@book) %> 
+    by <%=@book.author %> worth 
+    <%= "$#{'%.2f' % @book.value}" %>.
+  <hr class="my-4">
+  <p>Your total cost is <%= "$#{'%.2f' % @book.value}" %>. 
+  <% if @sale.verified_by_buyer == false %> 
+    Check back here after you have received the book to confirm receipt.</p>
+    <%= link_to fa_icon('thumbs-up')+"Received my Book!", advance_state_sale_path(@sale), method: :patch, class: "btn btn-success btn-lg" %>
+  <% end %>
+  <%# link_to fa_icon('fa-thumbs-up')+"Yes", :class => "btn btn-success" %>
+  <%= link_to @sale, method: :delete, data: { confirm: 'Are you sure? This will cancel the sale' }, class: 'btn btn-danger' do %>
+        <span>
+        <i class="fa fa-trash"></i>
+        Cancel?
+      </span>
+  <% end %>
+</div>

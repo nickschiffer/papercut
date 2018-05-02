@@ -29,7 +29,13 @@
 
   <div class="mx-auto text-center">
     <%= form.label :ISBN %>
-    <%= form.text_field :ISBN, id: :book_ISBN %>
+    <%= form.number_field :ISBN, id: :book_ISBN %>
+  </div>
+  <div class="mx-auto text-center">
+    <%= form.label :value %>
+    <%# form.number_field :value, in: 0.00..500.00, step: 0.01 ,id: :book_value %>
+    <%# form.number_field :value, in: 0.00..500.00, step: 0.01 ,id: :book %>
+    <%= form.number_field :value, value: number_to_currency(form.object.value.to_f, delimiter: '', unit: ''), in: 0.00..500.00, step: 0.01, id: :book_value %>
   </div>
   <div class="mx-auto text-center">
     <%= form.file_field :image, id: :image %>
@@ -38,6 +44,11 @@
   <div>
   <%# form.label :post_id %>
   <%= form.hidden_field :post_id, value: params[:post_id] %>
+  </div>
+  <div>
+  <%# form.label :post_id %>
+  <%= form.hidden_field :user_id, value: current_user.id %>
+  <%= form.hidden_field :visibility, value: :true %>
   </div>
 
   <div class="mx-auto text-center">

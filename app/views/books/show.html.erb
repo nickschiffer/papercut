@@ -1,5 +1,6 @@
 <% provide(:page_title, @book.title) %>
-<p id="notice"><%= notice %></p>
+<br />
+<br />
 <div class="mx-auto text-center">
 <p>
 	<%# image_tag @book.image_url(:thumb).to_s %>
@@ -9,6 +10,23 @@
       <!-- :class => "text-center mx-auto card-topper", :style => "background-image", :align => "middle", size: "150x200" -->
 <%# end %>
 </p>
+
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    <%=fa_icon "street-view", text: "Click Here to View Meetup Location"%>
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+		<div class="row mx-auto text-center">
+      <div class="col"></div>
+        <div class="col d-flex justify-content-center">
+          <%= render_gmap_coordinate_picker api_key: ENV["MAPS_API_KEY"], 'static'  => 'true', :default_coordinates => [@post.latitude,@post.longitude] , :zoom_level => 10  %>
+        </div>
+      	<div class="col"></div>
+  	</div>
+  </div>
+</div>
+
 <p>
   <strong>Title:</strong>
   <%= @book.title %>
@@ -28,14 +46,29 @@
   <strong>Isbn:</strong>
   <%= @book.ISBN %>
 </p>
+<p>
+  <strong>Price:</strong>
+  <%= "$#{'%.2f' % @book.value}" %>
+</p>
+
+
+
 <% if @user.id == current_user.id %>
 <%= link_to fa_icon('fa-pen-square')+"Edit", {:action => "edit", :id => @book.id, :post_id => @post.id}, :class => "btn btn-primary" %>
   |
+<% else %>
+  <%= link_to new_sale_path(:book_id => @book.id, :buyer_id => current_user.id, :seller_id => @book.user_id), class: 'btn btn-primary' do %>
+    <span>
+      <i class="fa fa-shopping-cart"></i>
+      Buy This Book!
+    </span>
+  <% end %> |
 <% end %>
 <%= link_to post_path(@book.post_id), class: 'btn btn-primary' do %>
   <span>
   <i class="fa fa-backward"></i>
   Back
   </span>
+
 <% end %>
 </div>

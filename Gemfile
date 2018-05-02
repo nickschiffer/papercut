@@ -56,6 +56,15 @@ gem 'rmagick'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+# Gmap Coordinate Picker
+gem 'gmap_coordinates_picker'
+# Searchkick
+gem 'searchkick'
+# Figaro for env management
+gem "figaro"
+gem 'bootstrap-datepicker-rails'
+gem 'rails_admin'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -65,6 +74,8 @@ group :development, :test do
   gem 'selenium-webdriver'
   # Use sqlite3 as the database for Active Record
   #gem 'sqlite3'
+  gem 'solargraph'
+  gem 'seed_dump'
 end
 
 group :development do
@@ -78,6 +89,8 @@ group :development do
   gem 'sqlite3'
   gem "better_errors"
   gem "binding_of_caller" 
+  gem 'solargraph'
+  gem 'seed_dump'
 end
 
 group :production do

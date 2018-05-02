@@ -1,0 +1,11 @@
+<div class="jumbotron">
+  <h1 class="display-4">Congrats <%= @seller.first_name%> <%=@seller.last_name%>! Your book has sold.</h1>
+  <p class="lead">It looks like you sold <%=link_to "#{@book.title}", book_path(@book) %> 
+    by <%=@book.author %> worth 
+    <%= "$#{'%.2f' % @book.value}" %> 
+    to <%= @buyer.first_name %> <%= @buyer.last_name %>.</p>
+  <hr class="my-4">
+  <p><%= @buyer.first_name %> <% @buyer.last_name %> 
+    paid you from <%= "$#{'%.2f' % @book.value}" %>. Hope to see you again soon.</p>
+  <%# link_to fa_icon('fa-thumbs-up')+"Yes", :class => "btn btn-success" %>
+</div>

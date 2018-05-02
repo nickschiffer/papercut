@@ -1,0 +1,54 @@
+<% @sells = Sale.where(["(seller_id = ?) AND state < ?", current_user.id, 2]) 
+   @buys = Sale.where(["(buyer_id = ?) AND state < ?", current_user.id, 2]) %>
+
+
+
+<section class="container-fluid d-flex justify-content-center">
+  <nav class="container">
+    <ul class="nav nav-pills nav-fill">
+      <li class="nav-item">
+        <% if @buys.count > 0 %>
+          <%= link_to user_inprogress_buys_path, class: action_name == 'inprogress_buys' ? 'nav-link active' : 'nav-link'  do %>
+            <span>
+              <i class="fa fa-spinner"></i>
+              Buys in Progess <span class="badge badge-danger"><%=@buys.count%></span>
+            </span>
+          <% end %>
+        <% else %>
+          <%= link_to user_inprogress_buys_path, class: action_name == 'inprogress_buys' ? 'nav-link active' : 'nav-link'  do %>
+            <span>
+              <i class="fa fa-spinner"></i>
+              Buys in Progess
+            </span>
+          <% end %>
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <% if @sells.count > 0 %>
+          <%= link_to user_inprogress_sells_path, class: action_name == 'inprogress_sells' ? 'nav-link active' : 'nav-link'  do %>
+            <span>
+              <i class="fa fa-spinner"></i>
+              Sells in Progess <span class="badge badge-danger"><%=@sells.count%></span>
+            </span>
+          <% end %>
+        <% else %>
+          <%= link_to user_inprogress_sells_path, class: action_name == 'inprogress_sells' ? 'nav-link active' : 'nav-link'  do %>
+            <span>
+              <i class="fa fa-spinner"></i>
+              Sells in Progess
+            </span>
+          <% end %>
+        <% end %>
+		
+      </li>
+      <li class="nav-item">
+        <%= link_to user_concluded_transactions_path, class: action_name == 'concluded_transactions' ? 'nav-link active' : 'nav-link' do %>
+          <span>
+			<i class="fa fa-history"></i>
+			Transaction History
+		  </span>
+        <% end %>
+      </li>
+    </ul>
+  </nav>
+</section>

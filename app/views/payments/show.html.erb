@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Payment method:</strong>
+  <%= @payment.payment_method %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @payment.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @payment.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @payment.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @payment.zip %>
+</p>
+<% if @payment.payment_method == "Credit" %>
+
+<p>
+  <strong>Credit card number:</strong>
+  <%= @payment.credit_card_number %>
+</p>
+
+<p>
+  <strong>Credit card cvc:</strong>
+  <%= @payment.credit_card_cvc %>
+</p>
+
+<p>
+  <strong>Credit card exp:</strong>
+  <%= @payment.credit_card_exp %>
+</p>
+<% elsif @payment.payment_method == "Paypal" %>
+
+<p>
+  <strong>Paypal email:</strong>
+  <%= @payment.paypal_email %>
+</p>
+
+<% else %>
+<p>
+  <strong>Zelle email:</strong>
+  <%= @payment.zelle_email %>
+</p>
+
+<% end %>
+
+<%= link_to 'Edit', edit_payment_path(@payment) %> |
+<%= link_to 'Back', payments_path %>

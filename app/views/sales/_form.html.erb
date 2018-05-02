@@ -1,0 +1,49 @@
+<%= form_with(model: sale, local: true) do |form| %>
+<%= stylesheet_link_tag 'devise' %>
+  <% if sale.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="text-center">
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    <%=fa_icon "exchange", text: "Have a Book to Trade?"%>
+  </button>
+  </p>
+  <div class="collapse" id="collapseExample">
+    <div class="form-group text-center">
+      <div class="form-control">
+      <%# form.select(:trade_id, Book.where(user_id: current_user.id).collect {|u| [u.title, u.value]}, :prompt => 'Select') %>
+      <%= form.select(:trade_id, Book.where("user_id = ? AND value <= ? AND visibility = 't'", current_user.id,(Book.find(params[:book_id])).value).collect {|u| [u.title, u.id]}, :prompt => 'Select') %>
+      </div>
+    </div>
+    <br />
+    <h3>No Books listed? No problem. <%= link_to new_post_path, class: 'btn btn-success' do %>
+      <span>
+        <i class="fa fa-plus"></i>
+        Upload One Here
+      </span>
+    <% end %></h3>
+  </div>
+
+  
+
+  <div>
+  <%= form.hidden_field :buyer_id,  value: params[:buyer_id] %>
+  <%= form.hidden_field :seller_id, value: params[:seller_id] %>
+  <%= form.hidden_field :book_id,   value: params[:book_id] %>
+  </div>
+  </div>
+
+  
+  <div class="mx-auto text-center">
+    <%= form.submit "Submit", :class => "btn btn-success" %>
+  </div>
+<% end %>

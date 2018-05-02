@@ -10,21 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180323194519) do
+ActiveRecord::Schema.define(version: 20180426034059) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.string "author"
     t.string "condition"
     t.string "ISBN"
+    t.integer "user_id"
+    t.float "value", default: 0.0
+    t.boolean "visibility", default: true
     t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
-    t.index ["ISBN"], name: "index_books_on_ISBN", unique: true
+    t.index ["ISBN"], name: "index_books_on_ISBN"
     t.index ["author"], name: "index_books_on_author"
     t.index ["post_id"], name: "index_books_on_post_id"
-    t.index ["title"], name: "index_books_on_title", unique: true
+    t.index ["title"], name: "index_books_on_title"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -39,16 +42,57 @@ ActiveRecord::Schema.define(version: 20180323194519) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
+  create_table "payments", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "payment_method"
+    t.string "address"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+    t.string "credit_card_number"
+    t.integer "credit_card_cvc"
+    t.string "credit_card_exp"
+    t.string "paypal_email"
+    t.string "paypal_password"
+    t.string "zelle_email"
+    t.string "zelle_password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.string "slug"
     t.integer "user_id"
     t.string "image"
+    t.float "latitude"
+    t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_posts_on_slug", unique: true
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "receipts", force: :cascade do |t|
+    t.string "buyer_id"
+    t.string "buyer_firstname"
+    t.string "buyer_lastname"
+    t.string "buyer_email"
+    t.string "seller_id"
+    t.string "seller_firstname"
+    t.string "seller_lastname"
+    t.string "seller_email"
+    t.string "book_title"
+    t.string "book_author"
+    t.string "book_isbn"
+    t.string "trade_title"
+    t.string "trade_author"
+    t.string "trade_isbn"
+    t.string "payment_method"
+    t.float "amount", default: 0.0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "replies", force: :cascade do |t|
@@ -61,6 +105,18 @@ ActiveRecord::Schema.define(version: 20180323194519) do
     t.index ["post_id"], name: "index_replies_on_post_id"
     t.index ["slug"], name: "index_replies_on_slug", unique: true
     t.index ["user_id"], name: "index_replies_on_user_id"
+  end
+
+  create_table "sales", force: :cascade do |t|
+    t.integer "buyer_id"
+    t.integer "seller_id"
+    t.integer "book_id"
+    t.integer "trade_id"
+    t.integer "state", default: 0
+    t.boolean "verified_by_buyer", default: false
+    t.boolean "verified_by_seller", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -78,6 +134,9 @@ ActiveRecord::Schema.define(version: 20180323194519) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
+    t.string "payment_method", default: "credit_card"
+    t.boolean "payment_verified", default: false
+    t.boolean "isAdmin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

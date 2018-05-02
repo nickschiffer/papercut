@@ -185,15 +185,15 @@
       <pre class="lines">
 
 
-6
 7
-8</pre>
+8
+9</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/registrations_controller.rb', line 6</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/registrations_controller.rb', line 7</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_account_update_params'>account_update_params</span>
-	<span class='id identifier rubyid_params'>params</span><span class='period'>.</span><span class='id identifier rubyid_require'>require</span><span class='lparen'>(</span><span class='symbol'>:user</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_permit'>permit</span><span class='lparen'>(</span><span class='symbol'>:first_name</span><span class='comma'>,</span> <span class='symbol'>:last_name</span><span class='comma'>,</span> <span class='symbol'>:email</span><span class='comma'>,</span> <span class='symbol'>:password</span><span class='comma'>,</span> <span class='symbol'>:password_confirmation</span><span class='comma'>,</span> <span class='symbol'>:current_password</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_params'>params</span><span class='period'>.</span><span class='id identifier rubyid_require'>require</span><span class='lparen'>(</span><span class='symbol'>:user</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_permit'>permit</span><span class='lparen'>(</span><span class='symbol'>:first_name</span><span class='comma'>,</span> <span class='symbol'>:last_name</span><span class='comma'>,</span> <span class='symbol'>:email</span><span class='comma'>,</span> <span class='symbol'>:password</span><span class='comma'>,</span> <span class='symbol'>:password_confirmation</span><span class='comma'>,</span> <span class='symbol'>:current_password</span><span class='comma'>,</span> <span class='symbol'>:payment_verified</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -215,15 +215,15 @@
       <pre class="lines">
 
 
-2
 3
-4</pre>
+4
+5</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/registrations_controller.rb', line 2</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/registrations_controller.rb', line 3</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_sign_up_params'>sign_up_params</span>
-	<span class='id identifier rubyid_params'>params</span><span class='period'>.</span><span class='id identifier rubyid_require'>require</span><span class='lparen'>(</span><span class='symbol'>:user</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_permit'>permit</span><span class='lparen'>(</span><span class='symbol'>:first_name</span><span class='comma'>,</span> <span class='symbol'>:last_name</span><span class='comma'>,</span> <span class='symbol'>:email</span><span class='comma'>,</span> <span class='symbol'>:password</span><span class='comma'>,</span> <span class='symbol'>:password_confirmation</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_params'>params</span><span class='period'>.</span><span class='id identifier rubyid_require'>require</span><span class='lparen'>(</span><span class='symbol'>:user</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_permit'>permit</span><span class='lparen'>(</span><span class='symbol'>:first_name</span><span class='comma'>,</span> <span class='symbol'>:last_name</span><span class='comma'>,</span> <span class='symbol'>:email</span><span class='comma'>,</span> <span class='symbol'>:password</span><span class='comma'>,</span> <span class='symbol'>:password_confirmation</span><span class='comma'>,</span> <span class='symbol'>:payment_method</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -235,9 +235,9 @@
 </div>
 
       <div id="footer">
-  Generated on Thu Apr  5 11:56:55 2018 by
+  Generated on Wed May  2 13:47:18 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.12 (ruby-2.5.0).
+  0.9.12 (ruby-2.5.1).
 </div>
 
     </div>

@@ -7,6 +7,9 @@ class CreatePosts < ActiveRecord::Migration[5.1]
       t.belongs_to :user
       t.string :image
 
+      t.float    :latitude
+      t.float    :longitude
+
       t.timestamps
     end
     add_index :posts, :slug, unique: true

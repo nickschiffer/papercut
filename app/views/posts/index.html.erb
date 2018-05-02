@@ -1,8 +1,9 @@
 <% provide(:page_title, 'All Posts') %>
-<p id="notice"><%= notice %></p>
+<br /><br />
 
 
-
+  <%= render "layouts/partials/postsnav" %>
+  <br />
   <% if @posts.blank? %>
     <h3>No Posts Yet</h3>
       <%= link_to new_post_path, class: 'btn btn-success' do %>

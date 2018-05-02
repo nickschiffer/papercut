@@ -1,0 +1,49 @@
+<div class='col-sm-6 col-lg-4'>
+	<div class="sales index">
+		<div class="sales index card">
+			<!-- <div class="card-topper" style='background-image: url(<%# ((Book.where(:post_id post.id)).image.exists?) ? ((Book.where(:post_id post.id)).image) : ("assets/fallback/book_placeholder.png") %>);'></div> -->
+			<!-- <div class="card-topper" style='background-image: url("/assets/fallback/book_placeholder.png");'></div> -->
+			<!-- <div class="card-topper" style='background-image: url(<%# post.image.to_s %>);'></div> -->
+			<% @book = Book.find(sale.book_id)
+				@buyer = User.find(sale.buyer_id)
+				@seller = User.find(sale.seller_id)
+				if sale.trade_id != nil
+				trade = Book.find(sale.trade_id)
+				body_text = "#{@buyer.first_name} wants to trade with you"
+				end
+				@state = case sale.state
+				when 0
+				"Waiting on Seller's Input"
+				when 1
+				"Waiting on Confirmation of Reciept"
+				else
+				"Completed"
+				end %>
+
+
+			<%= image_tag(@book.image.to_s, :class => "text-center mx-auto card-topper", :style => "background-image", :align => "middle", size: "175x200") %>
+			<div class="card-block text-center">
+				<h4 class="card-title"><%= link_to @book.title, sale %></h4>
+				<p class="card-text"><%= truncate(@body_text, length: 130) %></p>
+				<p class="published-date">State = <%= @state %> </p>
+				<p class="published-date">Initiated <%= sale.created_at%></p>
+				
+				<br>
+				<%= link_to sale, class: 'btn btn-primary' do %>
+					<span>
+				  		<i class="fa fa-eye"></i>
+				  		View
+				  	</span>
+				<% end %>
+				<% if sale.state < 1 %> 
+					<%= link_to sale, method: :delete, data: { confirm: 'Are you sure? This will cancel the sale' }, class: 'btn btn-danger' do %>
+						<span>
+							<i class="fa fa-trash"></i>
+							Delete
+						</span>
+					<% end %>
+				<% end %>
+			</div>
+		</div>
+	</div>	
+</div>

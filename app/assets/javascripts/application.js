@@ -17,5 +17,8 @@
 //=require bootstrap
 //=require rails-ujs
 //=require turbolinks
+//=require typeahead.bundle
+//=require posts
 //=require_tree .
 //=require bootstrap/js/bootstrap.bundle.min.js
+//=require bootstrap-datepicker

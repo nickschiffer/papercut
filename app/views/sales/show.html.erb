@@ -1,0 +1,58 @@
+<br /><br />
+<% if ((current_user.id == @sale.seller_id) && @sale.state == 0) %>
+    <% if @sale.trade_id != nil %>
+        <%= render "layouts/partials/sales/seller_with_trade_state_0" %>
+    <% else %>
+        <%= render "layouts/partials/sales/seller_no_trade_state_0" %>
+    <% end %>
+<% end %>
+<% if ((current_user.id == @sale.buyer_id) && @sale.state == 0) %>
+    <% if @sale.trade_id != nil %>
+        <%= render "layouts/partials/sales/buyer_with_trade_state_0" %>
+    <% else %>
+        <%= render "layouts/partials/sales/buyer_no_trade_state_0" %>
+    <% end %>
+<% end %>
+<% if ((current_user.id == @sale.seller_id) && @sale.state == 1) %>
+    <% if @sale.trade_id != nil %>
+        <%= render "layouts/partials/sales/seller_with_trade_state_1" %>
+    <% else %>
+        <%= render "layouts/partials/sales/seller_no_trade_state_1" %>
+    <% end %>
+<% end %>
+<% if ((current_user.id == @sale.buyer_id) && @sale.state == 1) %>
+    <% if @sale.trade_id != nil %>
+        <%= render "layouts/partials/sales/buyer_with_trade_state_1" %>
+    <% else %>
+        <%= render "layouts/partials/sales/buyer_no_trade_state_1" %>
+    <% end %>
+<% end %>
+<% if ((current_user.id == @sale.seller_id) && @sale.state == 2) %>
+    <% if @sale.trade_id != nil %>
+        <%= render "layouts/partials/sales/seller_with_trade_state_2" %>
+    <% else %>
+        <%= render "layouts/partials/sales/seller_no_trade_state_2" %>
+    <% end %>
+<% end %>
+<% if ((current_user.id == @sale.buyer_id) && @sale.state == 2) %>
+    <% if @sale.trade_id != nil %>
+        <%= render "layouts/partials/sales/buyer_with_trade_state_2" %>
+    <% else %>
+        <%= render "layouts/partials/sales/buyer_no_trade_state_2" %>
+    <% end %>
+<% end %>
+<% if ((current_user.id == @sale.buyer_id) or (current_user.id == @sale.seller_id)) && @sale.state == 0 %>
+    <%= link_to @sale, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do %> 
+		<span>
+			<i class="fa fa-trash"></i>
+			Cancel Sale
+		</span>
+	<% end %> |
+<% end %>
+<%= link_to :back, class: 'btn btn-primary' do %>
+  <span>
+  <i class="fa fa-backward"></i>
+  Back
+  </span>
+
+<% end %>

@@ -8,11 +8,11 @@
 			<div class="card-block text-center">
 				<h4 class="card-title"><%= link_to post.title, post %></h4>
 				<p class="card-text"><%= truncate(post.body, length: 130) %></p>
-				<p class="published-date"><%= (Book.where(post_id: post.id)).count %> books and <%= (Reply.where(post_id: post.id)).count %> replies</p>
+				<p class="published-date"><%= pluralize((Book.where(["post_id = ? AND visibility = 't'", post.id])).count, 'book' )%> and <%= pluralize((Reply.where(post_id: post.id)).count, 'reply')%> </p>
 				<p class="published-date">Posted by <%= (User.find(post.user_id)).first_name%> <%=(User.find(post.user_id)).last_name %></p>
-				<p class="published-date">Published <%= post.created_at%></p>
+				<p class="published-date"><%=post.created_at.strftime("Post Created: %c")%></p>
 				<% if post.created_at != post.updated_at %>
-				<p class="published-date">Updated <%= post.updated_at%></p>
+				<p class="published-date"><%= post.updated_at.strftime("Post Updated: %c")%></p>
 				
 				<% end %>
 				<br>
