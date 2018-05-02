@@ -201,7 +201,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>before_action :books_exist, only: [:inprogress_buys, :inprogress_sells].</p>
+</div></span>
   
 </li>
 
@@ -237,12 +239,12 @@
       <pre class="lines">
 
 
-16
-17
-18</pre>
+18
+19
+20</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/users_controller.rb', line 16</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/users_controller.rb', line 18</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_concluded_transactions'>concluded_transactions</span>
     <span class='ivar'>@receipts</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Receipt.html" title="Receipt (class)">Receipt</a></span></span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>(buyer_id = ? OR seller_id = ?)</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='ivar'>@user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='ivar'>@user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
@@ -267,12 +269,12 @@
       <pre class="lines">
 
 
-12
-13
-14</pre>
+14
+15
+16</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/users_controller.rb', line 12</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/users_controller.rb', line 14</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_inprogress_buys'>inprogress_buys</span>
     <span class='ivar'>@sales</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Sale.html" title="Sale (class)">Sale</a></span></span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>buyer_id = ? AND state &lt; ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='ivar'>@user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='int'>2</span><span class='rbracket'>]</span><span class='rparen'>)</span>
@@ -297,13 +299,13 @@
       <pre class="lines">
 
 
-7
-8
 9
-10</pre>
+10
+11
+12</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/users_controller.rb', line 7</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/users_controller.rb', line 9</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_inprogress_sells'>inprogress_sells</span>
     <span class='ivar'>@sales</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Sale.html" title="Sale (class)">Sale</a></span></span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>seller_id = ? AND state &lt; ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='ivar'>@user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='int'>2</span><span class='rbracket'>]</span><span class='rparen'>)</span>
@@ -323,18 +325,29 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>before_action :books_exist, only: [:inprogress_buys, :inprogress_sells]</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-3
-4
-5</pre>
+5
+6
+7</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/users_controller.rb', line 3</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/users_controller.rb', line 5</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_overview'>overview</span>
 
@@ -349,7 +362,7 @@
 </div>
 
       <div id="footer">
-  Generated on Wed Apr 25 11:44:24 2018 by
+  Generated on Wed May  2 13:47:17 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.5.1).
 </div>
