@@ -1,11 +1,11 @@
 class CreateReceipts < ActiveRecord::Migration[5.1]
   def change
     create_table :receipts do |t|
-      t.string :buyer_id
+      t.integer :buyer_id
       t.string :buyer_firstname
       t.string :buyer_lastname
       t.string :buyer_email
-      t.string :seller_id
+      t.integer :seller_id
       t.string :seller_firstname
       t.string :seller_lastname
       t.string :seller_email
