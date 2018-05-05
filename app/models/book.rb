@@ -15,11 +15,11 @@ class Book < ApplicationRecord
 	#searchkick word_middle: [:title, :author, :ISBN]
 
 	def make_visible
-		self.update(visibility: true)
+		self.update!(visibility: true)
 	end
 
 	def make_invisible
-		self.update(visibility: false)
+		self.update!(visibility: false)
 	end
 
 
