@@ -16,8 +16,14 @@
 git clone https://github.com/nickschiffer/papercut.git
 cd papercut
 ```
-3. Obtain a Google Maps API Key from [here](https://developers.google.com/maps/documentation/javascript/get-api-key).
-4. Setup the project and test that the server starts succesfully
+3. Obtain a Google Maps API Key from [here.](https://developers.google.com/maps/documentation/javascript/get-api-key)
+
+4. Create a config/application.yml file and paste in the following text (substituting your API Key).
+```sh
+development:
+    MAPS_API_KEY: "[YOUR_KEY_HERE]"
+```
+5. Setup the project and test that the server starts succesfully
 ```sh
 # Install gem dependencies
 bundle install --without production
@@ -30,4 +36,4 @@ rails db:migrate
 rails db:reset
 rails s
 ```
-5. Navigate to http://localhost:3000/
+6. Navigate to http://localhost:3000/
