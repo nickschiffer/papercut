@@ -1,4 +1,4 @@
-app/models/book.rb 5e95318c67bc41679dc828a3682a3d7fd804c743
+app/models/book.rb a50299b01db49ebeafa0df7031a5a330b2b7ec9f
 app/models/post.rb ebe0cc939814e5b43d3a58f044003f1849f492e5
 app/models/sale.rb 33189665664b667e59bfb5789ef7969504343765
 app/models/user.rb b931dddec3f03662ce94e8f90d7ca3be31d647d5

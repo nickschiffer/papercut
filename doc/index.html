@@ -57,28 +57,59 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><div id='filecontents'><h1>README</h1>
+      <div id="content"><div id='filecontents'><h1>papercut, a free and easy textbook exchange service. :blue_book:</h1>
 
-<p>This README would normally document whatever steps are necessary to get the
-application up and running.</p>
-
-<p>Things you may want to cover:</p>
+<h2>Table of Contents</h2>
 
 <ul>
-<li><p>Ruby version</p></li>
-<li><p>System dependencies</p></li>
-<li><p>Configuration</p></li>
-<li><p>Database creation</p></li>
-<li><p>Database initialization</p></li>
-<li><p>How to run the test suite</p></li>
-<li><p>Services (job queues, cache servers, search engines, etc.)</p></li>
-<li><p>Deployment instructions</p></li>
-<li><p>...</p></li>
+<li><a href="#about">About</a></li>
+<li><a href="#getting-started">Getting Started</a></li>
 </ul>
+
+<h2>About</h2>
+
+<p>The prices of textbook used in Universities had skyrocketed in the 10-15 years.  Most of the textbooks cost over $150 when it is new, even over $200 in some cases.  It would be nice to have a way that help the student to buy or exchange textbook used in our universities without the cost of the middleman (e.g. Amazon).</p>
+
+<p>## Getting Started</p>
+
+<ol>
+<li><p>Make sure Ruby, Rails is installed. (Linux or Mac Preferred) (click <a href="http://installrails.com/steps/choose_os">here</a> for general installation instructions.)</p>
+
+<ol>
+<li>Clone the repo
+<code>sh
+git clone https://github.com/nickschiffer/papercut.git
+cd papercut
+</code></li>
+<li>Obtain a Google Maps API Key from <a href="https://developers.google.com/maps/documentation/javascript/get-api-key">here.</a></li>
+<li>Create a config/application.yml file and paste in the following text (substituting your API Key).
+<code>sh
+development:
+MAPS_API_KEY: &quot;[YOUR_KEY_HERE]&quot;
+</code></li>
+<li>Setup the project and test that the server starts succesfully
+```sh
+# Install gem dependencies
+bundle install --without production</li>
+</ol></li>
+</ol>
+
+<h1>If you&#39;re on linux you may need to do the following to increase your number of watchers</h1>
+
+<p>echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf &amp;&amp; sudo sysctl -p</p>
+
+<h1>Migrate and reset the databse</h1>
+
+<p>rails db:migrate
+rails db:reset
+rails s</p>
+
+<pre class="code ruby"><code class="ruby">6. Navigate to http://localhost:3000/
+</code></pre>
 </div></div>
 
       <div id="footer">
-  Generated on Wed May  2 13:47:17 2018 by
+  Generated on Sat May  5 18:16:16 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.5.1).
 </div>
