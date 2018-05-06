@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Gemfile.lock - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Gemfile.html">Gemfile</a>
+  
+    <li><a href="./Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="./LICENSE.html">LICENSE</a>
+  
+    <li><a href="./README_md.html">README</a>
+  
+    <li><a href="./Rakefile.html">Rakefile</a>
+  
+    <li><a href="./app/assets/config/manifest_js.html">manifest.js</a>
+  
+    <li><a href="./app/assets/javascripts/application_js.html">application.js</a>
+  
+    <li><a href="./app/assets/javascripts/books_coffee.html">books.coffee</a>
+  
+    <li><a href="./app/assets/javascripts/cable_js.html">cable.js</a>
+  
+    <li><a href="./app/assets/javascripts/payments_coffee.html">payments.coffee</a>
+  
+    <li><a href="./app/assets/javascripts/posts_coffee.html">posts.coffee</a>
+  
+    <li><a href="./app/assets/javascripts/posts_js.html">posts.js</a>
+  
+    <li><a href="./app/assets/javascripts/receipts_coffee.html">receipts.coffee</a>
+  
+    <li><a href="./app/assets/javascripts/replies_coffee.html">replies.coffee</a>
+  
+    <li><a href="./app/assets/javascripts/sales_coffee.html">sales.coffee</a>
+  
+    <li><a href="./app/assets/javascripts/users_coffee.html">users.coffee</a>
+  
+    <li><a href="./app/assets/stylesheets/_books_scss.html">_books.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/_call-to-action_scss.html">_call-to-action.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/_footer_scss.html">_footer.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/_global_scss.html">_global.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/_icons_scss.html">_icons.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/_masthead_scss.html">_masthead.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/_mixins_scss.html">_mixins.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/_posts_scss.html">_posts.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/_replies_scss.html">_replies.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/_sales_scss.html">_sales.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/_showcase_scss.html">_showcase.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/_testimonials_scss.html">_testimonials.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/_variables_scss.html">_variables.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/alerts_css_scss.html">alerts.css.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/application_scss.html">application.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/css/landing-page_css.html">landing-page.css</a>
+  
+    <li><a href="./app/assets/stylesheets/css/landing-page_min_css.html">landing-page.min.css</a>
+  
+    <li><a href="./app/assets/stylesheets/devise_scss.html">devise.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/landing-page_min_css.html">landing-page.min.css</a>
+  
+    <li><a href="./app/assets/stylesheets/landing-page_scss.html">landing-page.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/landing-page1_css.html">landing-page1.css</a>
+  
+    <li><a href="./app/assets/stylesheets/payments_scss.html">payments.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/receipts_scss.html">receipts.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/scaffolds_scss.html">scaffolds.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/scss/_call-to-action_scss.html">_call-to-action.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/scss/_footer_scss.html">_footer.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/scss/_global_scss.html">_global.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/scss/_icons_scss.html">_icons.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/scss/_masthead_scss.html">_masthead.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/scss/_mixins_scss.html">_mixins.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/scss/_showcase_scss.html">_showcase.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/scss/_testimonials_scss.html">_testimonials.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/scss/_variables_scss.html">_variables.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/scss/landing-page_scss.html">landing-page.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/showpost_scss.html">showpost.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/users_scss.html">users.scss</a>
+  
+    <li><a href="./app/views/books/_book_json_jbuilder.html">_book.json.jbuilder</a>
+  
+    <li><a href="./app/views/books/index_json_jbuilder.html">index.json.jbuilder</a>
+  
+    <li><a href="./app/views/books/show_json_jbuilder.html">show.json.jbuilder</a>
+  
+    <li><a href="./app/views/payments/_payment_json_jbuilder.html">_payment.json.jbuilder</a>
+  
+    <li><a href="./app/views/payments/index_json_jbuilder.html">index.json.jbuilder</a>
+  
+    <li><a href="./app/views/payments/show_json_jbuilder.html">show.json.jbuilder</a>
+  
+    <li><a href="./app/views/posts/_post_json_jbuilder.html">_post.json.jbuilder</a>
+  
+    <li><a href="./app/views/posts/index_json_jbuilder.html">index.json.jbuilder</a>
+  
+    <li><a href="./app/views/posts/show_json_jbuilder.html">show.json.jbuilder</a>
+  
+    <li><a href="./app/views/receipts/_receipt_json_jbuilder.html">_receipt.json.jbuilder</a>
+  
+    <li><a href="./app/views/receipts/index_json_jbuilder.html">index.json.jbuilder</a>
+  
+    <li><a href="./app/views/receipts/show_json_jbuilder.html">show.json.jbuilder</a>
+  
+    <li><a href="./app/views/replies/_reply_json_jbuilder.html">_reply.json.jbuilder</a>
+  
+    <li><a href="./app/views/replies/index_json_jbuilder.html">index.json.jbuilder</a>
+  
+    <li><a href="./app/views/replies/show_json_jbuilder.html">show.json.jbuilder</a>
+  
+    <li><a href="./app/views/sales/_sale_json_jbuilder.html">_sale.json.jbuilder</a>
+  
+    <li><a href="./app/views/sales/index_json_jbuilder.html">index.json.jbuilder</a>
+  
+    <li><a href="./app/views/sales/show_json_jbuilder.html">show.json.jbuilder</a>
+  
+    <li><a href="./config_ru.html">config.ru</a>
+  
+    <li><a href="./db/seeds_rb_admin_bak.html">seeds.rb.admin.bak</a>
+  
+    <li><a href="./db/seeds_rb_bak.html">seeds.rb.bak</a>
+  
+    <li><a href="./doc/ActiveSupport/TestCase_html.html">TestCase.html</a>
+  
+    <li><a href="./doc/AddFirstNameToUsers_html.html">AddFirstNameToUsers.html</a>
+  
+    <li><a href="./doc/AddImageToBooks_html.html">AddImageToBooks.html</a>
+  
+    <li><a href="./doc/AddLastNameToUsers_html.html">AddLastNameToUsers.html</a>
+  
+    <li><a href="./doc/ApplicationCable_html.html">ApplicationCable.html</a>
+  
+    <li><a href="./doc/ApplicationCable/Channel_html.html">Channel.html</a>
+  
+    <li><a href="./doc/ApplicationCable/Connection_html.html">Connection.html</a>
+  
+    <li><a href="./doc/ApplicationController_html.html">ApplicationController.html</a>
+  
+    <li><a href="./doc/ApplicationHelper_html.html">ApplicationHelper.html</a>
+  
+    <li><a href="./doc/ApplicationJob_html.html">ApplicationJob.html</a>
+  
+    <li><a href="./doc/ApplicationMailer_html.html">ApplicationMailer.html</a>
+  
+    <li><a href="./doc/ApplicationRecord_html.html">ApplicationRecord.html</a>
+  
+    <li><a href="./doc/ApplicationSystemTestCase_html.html">ApplicationSystemTestCase.html</a>
+  
+    <li><a href="./doc/Book_html.html">Book.html</a>
+  
+    <li><a href="./doc/BookTest_html.html">BookTest.html</a>
+  
+    <li><a href="./doc/BooksController_html.html">BooksController.html</a>
+  
+    <li><a href="./doc/BooksControllerTest_html.html">BooksControllerTest.html</a>
+  
+    <li><a href="./doc/BooksHelper_html.html">BooksHelper.html</a>
+  
+    <li><a href="./doc/BooksTest_html.html">BooksTest.html</a>
+  
+    <li><a href="./doc/CreateBooks_html.html">CreateBooks.html</a>
+  
+    <li><a href="./doc/CreateFriendlyIdSlugs_html.html">CreateFriendlyIdSlugs.html</a>
+  
+    <li><a href="./doc/CreatePosts_html.html">CreatePosts.html</a>
+  
+    <li><a href="./doc/CreateReceipts_html.html">CreateReceipts.html</a>
+  
+    <li><a href="./doc/CreateReplies_html.html">CreateReplies.html</a>
+  
+    <li><a href="./doc/CreateSales_html.html">CreateSales.html</a>
+  
+    <li><a href="./doc/DeviseCreateUsers_html.html">DeviseCreateUsers.html</a>
+  
+    <li><a href="./doc/DeviseHelper_html.html">DeviseHelper.html</a>
+  
+    <li><a href="./doc/ImageUploader_html.html">ImageUploader.html</a>
+  
+    <li><a href="./doc/Papercut_html.html">Papercut.html</a>
+  
+    <li><a href="./doc/Papercut/Application_html.html">Application.html</a>
+  
+    <li><a href="./doc/Payment_html.html">Payment.html</a>
+  
+    <li><a href="./doc/PaymentsController_html.html">PaymentsController.html</a>
+  
+    <li><a href="./doc/PaymentsHelper_html.html">PaymentsHelper.html</a>
+  
+    <li><a href="./doc/Post_html.html">Post.html</a>
+  
+    <li><a href="./doc/PostTest_html.html">PostTest.html</a>
+  
+    <li><a href="./doc/PostsController_html.html">PostsController.html</a>
+  
+    <li><a href="./doc/PostsControllerTest_html.html">PostsControllerTest.html</a>
+  
+    <li><a href="./doc/PostsHelper_html.html">PostsHelper.html</a>
+  
+    <li><a href="./doc/PostsTest_html.html">PostsTest.html</a>
+  
+    <li><a href="./doc/Receipt_html.html">Receipt.html</a>
+  
+    <li><a href="./doc/ReceiptTest_html.html">ReceiptTest.html</a>
+  
+    <li><a href="./doc/ReceiptsController_html.html">ReceiptsController.html</a>
+  
+    <li><a href="./doc/ReceiptsControllerTest_html.html">ReceiptsControllerTest.html</a>
+  
+    <li><a href="./doc/ReceiptsHelper_html.html">ReceiptsHelper.html</a>
+  
+    <li><a href="./doc/ReceiptsTest_html.html">ReceiptsTest.html</a>
+  
+    <li><a href="./doc/RegistrationsController_html.html">RegistrationsController.html</a>
+  
+    <li><a href="./doc/RepliesController_html.html">RepliesController.html</a>
+  
+    <li><a href="./doc/RepliesControllerTest_html.html">RepliesControllerTest.html</a>
+  
+    <li><a href="./doc/RepliesHelper_html.html">RepliesHelper.html</a>
+  
+    <li><a href="./doc/RepliesTest_html.html">RepliesTest.html</a>
+  
+    <li><a href="./doc/Reply_html.html">Reply.html</a>
+  
+    <li><a href="./doc/ReplyTest_html.html">ReplyTest.html</a>
+  
+    <li><a href="./doc/Sale_html.html">Sale.html</a>
+  
+    <li><a href="./doc/SaleControllerTest_html.html">SaleControllerTest.html</a>
+  
+    <li><a href="./doc/SaleHelper_html.html">SaleHelper.html</a>
+  
+    <li><a href="./doc/SaleTest_html.html">SaleTest.html</a>
+  
+    <li><a href="./doc/SalesController_html.html">SalesController.html</a>
+  
+    <li><a href="./doc/SalesControllerTest_html.html">SalesControllerTest.html</a>
+  
+    <li><a href="./doc/SalesHelper_html.html">SalesHelper.html</a>
+  
+    <li><a href="./doc/SalesTest_html.html">SalesTest.html</a>
+  
+    <li><a href="./doc/StaticsController_html.html">StaticsController.html</a>
+  
+    <li><a href="./doc/User_html.html">User.html</a>
+  
+    <li><a href="./doc/UserTest_html.html">UserTest.html</a>
+  
+    <li><a href="./doc/UsersController_html.html">UsersController.html</a>
+  
+    <li><a href="./doc/UsersControllerTest_html.html">UsersControllerTest.html</a>
+  
+    <li><a href="./doc/UsersHelper_html.html">UsersHelper.html</a>
+  
+    <li><a href="./doc/_index_html.html">_index.html</a>
+  
+    <li><a href="./doc/class_list_html.html">class_list.html</a>
+  
+    <li><a href="./doc/css/common_css.html">common.css</a>
+  
+    <li><a href="./doc/css/full_list_css.html">full_list.css</a>
+  
+    <li><a href="./doc/css/style_css.html">style.css</a>
+  
+    <li><a href="./doc/file_README_html.html">file.README.html</a>
+  
+    <li><a href="./doc/file_list_html.html">file_list.html</a>
+  
+    <li><a href="./doc/frames_html.html">frames.html</a>
+  
+    <li><a href="./doc/index_html.html">index.html</a>
+  
+    <li><a href="./doc/js/app_js.html">app.js</a>
+  
+    <li><a href="./doc/js/full_list_js.html">full_list.js</a>
+  
+    <li><a href="./doc/js/jquery_js.html">jquery.js</a>
+  
+    <li><a href="./doc/method_list_html.html">method_list.html</a>
+  
+    <li><a href="./doc/top-level-namespace_html.html">top-level-namespace.html</a>
+  
+    <li><a href="./log/development_log.html">development.log</a>
+  
+    <li><a href="./log/migrate_log.html">migrate.log</a>
+  
+    <li><a href="./log/test_log.html">test.log</a>
+  
+    <li><a href="./package_json.html">package.json</a>
+  
+    <li><a href="./public/404_html.html">404.html</a>
+  
+    <li><a href="./public/422_html.html">422.html</a>
+  
+    <li><a href="./public/500_html.html">500.html</a>
+  
+    <li><a href="./public/apple-touch-icon-precomposed_png.html">apple-touch-icon-precomposed.png</a>
+  
+    <li><a href="./public/apple-touch-icon_png.html">apple-touch-icon.png</a>
+  
+    <li><a href="./public/favicon_ico.html">favicon.ico</a>
+  
+    <li><a href="./public/robots_txt.html">robots</a>
+  
+    <li><a href="./tmp/restart_txt.html">restart</a>
+  
+    <li><a href="./vendor/assets/javascripts/bootstrap/css/bootstrap-grid_css.html">bootstrap-grid.css</a>
+  
+    <li><a href="./vendor/assets/javascripts/bootstrap/css/bootstrap-grid_min_css.html">bootstrap-grid.min.css</a>
+  
+    <li><a href="./vendor/assets/javascripts/bootstrap/css/bootstrap-reboot_css.html">bootstrap-reboot.css</a>
+  
+    <li><a href="./vendor/assets/javascripts/bootstrap/css/bootstrap-reboot_min_css.html">bootstrap-reboot.min.css</a>
+  
+    <li><a href="./vendor/assets/javascripts/bootstrap/css/bootstrap_css.html">bootstrap.css</a>
+  
+    <li><a href="./vendor/assets/javascripts/bootstrap/css/bootstrap_css_map.html">bootstrap.css.map</a>
+  
+    <li><a href="./vendor/assets/javascripts/bootstrap/css/bootstrap_min_css.html">bootstrap.min.css</a>
+  
+    <li><a href="./vendor/assets/javascripts/bootstrap/css/bootstrap_min_css_map.html">bootstrap.min.css.map</a>
+  
+    <li><a href="./vendor/assets/javascripts/bootstrap/js/bootstrap_bundle_js.html">bootstrap.bundle.js</a>
+  
+    <li><a href="./vendor/assets/javascripts/bootstrap/js/bootstrap_bundle_js_map.html">bootstrap.bundle.js.map</a>
+  
+    <li><a href="./vendor/assets/javascripts/bootstrap/js/bootstrap_bundle_min_js.html">bootstrap.bundle.min.js</a>
+  
+    <li><a href="./vendor/assets/javascripts/bootstrap/js/bootstrap_bundle_min_js_map.html">bootstrap.bundle.min.js.map</a>
+  
+    <li><a href="./vendor/assets/javascripts/bootstrap/js/bootstrap_js.html">bootstrap.js</a>
+  
+    <li><a href="./vendor/assets/javascripts/bootstrap/js/bootstrap_js_map.html">bootstrap.js.map</a>
+  
+    <li><a href="./vendor/assets/javascripts/bootstrap/js/bootstrap_min_js.html">bootstrap.min.js</a>
+  
+    <li><a href="./vendor/assets/javascripts/bootstrap/js/bootstrap_min_js_map.html">bootstrap.min.js.map</a>
+  
+    <li><a href="./vendor/assets/javascripts/typeahead_bundle_js.html">typeahead.bundle.js</a>
+  
+    <li><a href="./vendor/bootstrap/css/bootstrap-grid_css.html">bootstrap-grid.css</a>
+  
+    <li><a href="./vendor/bootstrap/css/bootstrap-grid_min_css.html">bootstrap-grid.min.css</a>
+  
+    <li><a href="./vendor/bootstrap/css/bootstrap-reboot_css.html">bootstrap-reboot.css</a>
+  
+    <li><a href="./vendor/bootstrap/css/bootstrap-reboot_min_css.html">bootstrap-reboot.min.css</a>
+  
+    <li><a href="./vendor/bootstrap/css/bootstrap_css.html">bootstrap.css</a>
+  
+    <li><a href="./vendor/bootstrap/css/bootstrap_css_map.html">bootstrap.css.map</a>
+  
+    <li><a href="./vendor/bootstrap/css/bootstrap_min_css.html">bootstrap.min.css</a>
+  
+    <li><a href="./vendor/bootstrap/css/bootstrap_min_css_map.html">bootstrap.min.css.map</a>
+  
+    <li><a href="./vendor/bootstrap/js/bootstrap_bundle_js.html">bootstrap.bundle.js</a>
+  
+    <li><a href="./vendor/bootstrap/js/bootstrap_bundle_js_map.html">bootstrap.bundle.js.map</a>
+  
+    <li><a href="./vendor/bootstrap/js/bootstrap_bundle_min_js.html">bootstrap.bundle.min.js</a>
+  
+    <li><a href="./vendor/bootstrap/js/bootstrap_bundle_min_js_map.html">bootstrap.bundle.min.js.map</a>
+  
+    <li><a href="./vendor/bootstrap/js/bootstrap_js.html">bootstrap.js</a>
+  
+    <li><a href="./vendor/bootstrap/js/bootstrap_js_map.html">bootstrap.js.map</a>
+  
+    <li><a href="./vendor/bootstrap/js/bootstrap_min_js.html">bootstrap.min.js</a>
+  
+    <li><a href="./vendor/bootstrap/js/bootstrap_min_js_map.html">bootstrap.min.js.map</a>
+  
+    <li><a href="./vendor/font-awesome/css/font-awesome_css.html">font-awesome.css</a>
+  
+    <li><a href="./vendor/font-awesome/css/font-awesome_css_map.html">font-awesome.css.map</a>
+  
+    <li><a href="./vendor/font-awesome/css/font-awesome_min_css.html">font-awesome.min.css</a>
+  
+    <li><a href="./vendor/font-awesome/less/animated_less.html">animated.less</a>
+  
+    <li><a href="./vendor/font-awesome/less/bordered-pulled_less.html">bordered-pulled.less</a>
+  
+    <li><a href="./vendor/font-awesome/less/core_less.html">core.less</a>
+  
+    <li><a href="./vendor/font-awesome/less/fixed-width_less.html">fixed-width.less</a>
+  
+    <li><a href="./vendor/font-awesome/less/font-awesome_less.html">font-awesome.less</a>
+  
+    <li><a href="./vendor/font-awesome/less/icons_less.html">icons.less</a>
+  
+    <li><a href="./vendor/font-awesome/less/larger_less.html">larger.less</a>
+  
+    <li><a href="./vendor/font-awesome/less/list_less.html">list.less</a>
+  
+    <li><a href="./vendor/font-awesome/less/mixins_less.html">mixins.less</a>
+  
+    <li><a href="./vendor/font-awesome/less/path_less.html">path.less</a>
+  
+    <li><a href="./vendor/font-awesome/less/rotated-flipped_less.html">rotated-flipped.less</a>
+  
+    <li><a href="./vendor/font-awesome/less/screen-reader_less.html">screen-reader.less</a>
+  
+    <li><a href="./vendor/font-awesome/less/stacked_less.html">stacked.less</a>
+  
+    <li><a href="./vendor/font-awesome/less/variables_less.html">variables.less</a>
+  
+    <li><a href="./vendor/font-awesome/scss/_animated_scss.html">_animated.scss</a>
+  
+    <li><a href="./vendor/font-awesome/scss/_bordered-pulled_scss.html">_bordered-pulled.scss</a>
+  
+    <li><a href="./vendor/font-awesome/scss/_core_scss.html">_core.scss</a>
+  
+    <li><a href="./vendor/font-awesome/scss/_fixed-width_scss.html">_fixed-width.scss</a>
+  
+    <li><a href="./vendor/font-awesome/scss/_icons_scss.html">_icons.scss</a>
+  
+    <li><a href="./vendor/font-awesome/scss/_larger_scss.html">_larger.scss</a>
+  
+    <li><a href="./vendor/font-awesome/scss/_list_scss.html">_list.scss</a>
+  
+    <li><a href="./vendor/font-awesome/scss/_mixins_scss.html">_mixins.scss</a>
+  
+    <li><a href="./vendor/font-awesome/scss/_path_scss.html">_path.scss</a>
+  
+    <li><a href="./vendor/font-awesome/scss/_rotated-flipped_scss.html">_rotated-flipped.scss</a>
+  
+    <li><a href="./vendor/font-awesome/scss/_screen-reader_scss.html">_screen-reader.scss</a>
+  
+    <li><a href="./vendor/font-awesome/scss/_stacked_scss.html">_stacked.scss</a>
+  
+    <li><a href="./vendor/font-awesome/scss/_variables_scss.html">_variables.scss</a>
+  
+    <li><a href="./vendor/font-awesome/scss/font-awesome_scss.html">font-awesome.scss</a>
+  
+    <li><a href="./vendor/jquery/jquery_js.html">jquery.js</a>
+  
+    <li><a href="./vendor/jquery/jquery_min_js.html">jquery.min.js</a>
+  
+    <li><a href="./vendor/jquery/jquery_min_map.html">jquery.min.map</a>
+  
+    <li><a href="./vendor/jquery/jquery_slim_js.html">jquery.slim.js</a>
+  
+    <li><a href="./vendor/jquery/jquery_slim_min_js.html">jquery.slim.min.js</a>
+  
+    <li><a href="./vendor/jquery/jquery_slim_min_map.html">jquery.slim.min.map</a>
+  
+    <li><a href="./vendor/simple-line-icons/css/simple-line-icons_css.html">simple-line-icons.css</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page Gemfile.lock">
+
+<p>GEM</p>
+
+<pre>remote: https://rubygems.org/
+specs:
+  actioncable (5.1.6)
+    actionpack (= 5.1.6)
+    nio4r (~&gt; 2.0)
+    websocket-driver (~&gt; 0.6.1)
+  actionmailer (5.1.6)
+    actionpack (= 5.1.6)
+    actionview (= 5.1.6)
+    activejob (= 5.1.6)
+    mail (~&gt; 2.5, &gt;= 2.5.4)
+    rails-dom-testing (~&gt; 2.0)
+  actionpack (5.1.6)
+    actionview (= 5.1.6)
+    activesupport (= 5.1.6)
+    rack (~&gt; 2.0)
+    rack-test (&gt;= 0.6.3)
+    rails-dom-testing (~&gt; 2.0)
+    rails-html-sanitizer (~&gt; 1.0, &gt;= 1.0.2)
+  actionview (5.1.6)
+    activesupport (= 5.1.6)
+    builder (~&gt; 3.1)
+    erubi (~&gt; 1.4)
+    rails-dom-testing (~&gt; 2.0)
+    rails-html-sanitizer (~&gt; 1.0, &gt;= 1.0.3)
+  activejob (5.1.6)
+    activesupport (= 5.1.6)
+    globalid (&gt;= 0.3.6)
+  activemodel (5.1.6)
+    activesupport (= 5.1.6)
+  activerecord (5.1.6)
+    activemodel (= 5.1.6)
+    activesupport (= 5.1.6)
+    arel (~&gt; 8.0)
+  activesupport (5.1.6)
+    concurrent-ruby (~&gt; 1.0, &gt;= 1.0.2)
+    i18n (&gt;= 0.7, &lt; 2)
+    minitest (~&gt; 5.1)
+    tzinfo (~&gt; 1.1)
+  addressable (2.5.2)
+    public_suffix (&gt;= 2.0.2, &lt; 4.0)
+  arel (8.0.0)
+  ast (2.4.0)
+  autoprefixer-rails (8.4.1)
+    execjs
+  bcrypt (3.1.11)
+  better_errors (2.4.0)
+    coderay (&gt;= 1.0.0)
+    erubi (&gt;= 1.0.0)
+    rack (&gt;= 0.9.0)
+  bindex (0.5.0)
+  binding_of_caller (0.8.0)
+    debug_inspector (&gt;= 0.0.1)
+  bootstrap (4.0.0)
+    autoprefixer-rails (&gt;= 6.0.3)
+    popper_js (&gt;= 1.12.9, &lt; 2)
+    sass (&gt;= 3.5.2)
+  bootstrap-datepicker-rails (1.8.0.1)
+    railties (&gt;= 3.0)
+  builder (3.2.3)
+  byebug (10.0.2)
+  capybara (2.18.0)
+    addressable
+    mini_mime (&gt;= 0.1.3)
+    nokogiri (&gt;= 1.3.3)
+    rack (&gt;= 1.0.0)
+    rack-test (&gt;= 0.5.4)
+    xpath (&gt;= 2.0, &lt; 4.0)
+  carrierwave (1.2.2)
+    activemodel (&gt;= 4.0.0)
+    activesupport (&gt;= 4.0.0)
+    mime-types (&gt;= 1.16)
+  childprocess (0.9.0)
+    ffi (~&gt; 1.0, &gt;= 1.0.11)
+  coderay (1.1.2)
+  coffee-rails (4.2.2)
+    coffee-script (&gt;= 2.2.0)
+    railties (&gt;= 4.0.0)
+  coffee-script (2.4.1)
+    coffee-script-source
+    execjs
+  coffee-script-source (1.12.2)
+  concurrent-ruby (1.0.5)
+  crass (1.0.4)
+  debug_inspector (0.0.3)
+  devise (4.4.3)
+    bcrypt (~&gt; 3.0)
+    orm_adapter (~&gt; 0.1)
+    railties (&gt;= 4.1.0, &lt; 6.0)
+    responders
+    warden (~&gt; 1.2.3)
+  elasticsearch (6.0.2)
+    elasticsearch-api (= 6.0.2)
+    elasticsearch-transport (= 6.0.2)
+  elasticsearch-api (6.0.2)
+    multi_json
+  elasticsearch-transport (6.0.2)
+    faraday
+    multi_json
+  erubi (1.7.1)
+  eventmachine (1.2.6)
+  excon (0.62.0)
+  execjs (2.7.0)
+  faraday (0.15.0)
+    multipart-post (&gt;= 1.2, &lt; 3)
+  ffi (1.9.23)
+  figaro (1.1.1)
+    thor (~&gt; 0.14)
+  fog-aws (3.0.0)
+    fog-core (~&gt; 2.1)
+    fog-json (~&gt; 1.1)
+    fog-xml (~&gt; 0.1)
+    ipaddress (~&gt; 0.8)
+  fog-core (2.1.0)
+    builder
+    excon (~&gt; 0.58)
+    formatador (~&gt; 0.2)
+    mime-types
+  fog-json (1.1.0)
+    fog-core (~&gt; 2.0)
+    multi_json (~&gt; 1.10)
+  fog-xml (0.1.3)
+    fog-core
+    nokogiri (&gt;= 1.5.11, &lt; 2.0.0)
+  font-awesome-rails (4.7.0.4)
+    railties (&gt;= 3.2, &lt; 6.0)
+  font-awesome-sass (5.0.9)
+    sass (&gt;= 3.2)
+  formatador (0.2.5)
+  friendly_id (5.2.4)
+    activerecord (&gt;= 4.0.0)
+  globalid (0.4.1)
+    activesupport (&gt;= 4.2.0)
+  gmap_coordinates_picker (0.1.2)
+    rails (&gt;= 3.1.0, &lt; 6)
+  haml (5.0.4)
+    temple (&gt;= 0.8.0)
+    tilt
+  hashie (3.5.7)
+  htmlentities (4.3.4)
+  i18n (1.0.1)
+    concurrent-ruby (~&gt; 1.0)
+  ipaddress (0.8.3)
+  jbuilder (2.7.0)
+    activesupport (&gt;= 4.2.0)
+    multi_json (&gt;= 1.2)
+  jquery-rails (4.3.3)
+    rails-dom-testing (&gt;= 1, &lt; 3)
+    railties (&gt;= 4.2.0)
+    thor (&gt;= 0.14, &lt; 2.0)
+  jquery-ui-rails (5.0.5)
+    railties (&gt;= 3.2.16)
+  kaminari (1.1.1)
+    activesupport (&gt;= 4.1.0)
+    kaminari-actionview (= 1.1.1)
+    kaminari-activerecord (= 1.1.1)
+    kaminari-core (= 1.1.1)
+  kaminari-actionview (1.1.1)
+    actionview
+    kaminari-core (= 1.1.1)
+  kaminari-activerecord (1.1.1)
+    activerecord
+    kaminari-core (= 1.1.1)
+  kaminari-core (1.1.1)
+  kramdown (1.16.2)
+  listen (3.1.5)
+    rb-fsevent (~&gt; 0.9, &gt;= 0.9.4)
+    rb-inotify (~&gt; 0.9, &gt;= 0.9.7)
+    ruby_dep (~&gt; 1.2)
+  loofah (2.2.2)
+    crass (~&gt; 1.0.2)
+    nokogiri (&gt;= 1.5.9)
+  mail (2.7.0)
+    mini_mime (&gt;= 0.1.1)
+  method_source (0.9.0)
+  mime-types (3.1)
+    mime-types-data (~&gt; 3.2015)
+  mime-types-data (3.2016.0521)
+  mini_mime (1.0.0)
+  mini_portile2 (2.3.0)
+  minitest (5.11.3)
+  multi_json (1.13.1)
+  multipart-post (2.0.0)
+  mustermann (1.0.2)
+  nested_form (0.3.2)
+  nio4r (2.3.1)
+  nokogiri (1.8.2)
+    mini_portile2 (~&gt; 2.3.0)
+  orm_adapter (0.5.0)
+  parallel (1.12.1)
+  parser (2.5.1.0)
+    ast (~&gt; 2.4.0)
+  pg (1.0.0)
+  popper_js (1.12.9)
+  powerpack (0.1.1)
+  public_suffix (3.0.2)
+  puma (3.11.4)
+  rack (2.0.5)
+  rack-pjax (1.0.0)
+    nokogiri (~&gt; 1.5)
+    rack (&gt;= 1.1)
+  rack-protection (2.0.1)
+    rack
+  rack-test (1.0.0)
+    rack (&gt;= 1.0, &lt; 3)
+  rails (5.1.6)
+    actioncable (= 5.1.6)
+    actionmailer (= 5.1.6)
+    actionpack (= 5.1.6)
+    actionview (= 5.1.6)
+    activejob (= 5.1.6)
+    activemodel (= 5.1.6)
+    activerecord (= 5.1.6)
+    activesupport (= 5.1.6)
+    bundler (&gt;= 1.3.0)
+    railties (= 5.1.6)
+    sprockets-rails (&gt;= 2.0.0)
+  rails-dom-testing (2.0.3)
+    activesupport (&gt;= 4.2.0)
+    nokogiri (&gt;= 1.6)
+  rails-html-sanitizer (1.0.4)
+    loofah (~&gt; 2.2, &gt;= 2.2.2)
+  rails_admin (1.3.0)
+    builder (~&gt; 3.1)
+    coffee-rails (~&gt; 4.0)
+    font-awesome-rails (&gt;= 3.0, &lt; 5)
+    haml (&gt;= 4.0, &lt; 6)
+    jquery-rails (&gt;= 3.0, &lt; 5)
+    jquery-ui-rails (~&gt; 5.0)
+    kaminari (&gt;= 0.14, &lt; 2.0)
+    nested_form (~&gt; 0.3)
+    rack-pjax (&gt;= 0.7)
+    rails (&gt;= 4.0, &lt; 6)
+    remotipart (~&gt; 1.3)
+    sass-rails (&gt;= 4.0, &lt; 6)
+  railties (5.1.6)
+    actionpack (= 5.1.6)
+    activesupport (= 5.1.6)
+    method_source
+    rake (&gt;= 0.8.7)
+    thor (&gt;= 0.18.1, &lt; 2.0)
+  rainbow (3.0.0)
+  rake (12.3.1)
+  rb-fsevent (0.10.3)
+  rb-inotify (0.9.10)
+    ffi (&gt;= 0.5.0, &lt; 2)
+  remotipart (1.4.2)
+  responders (2.4.0)
+    actionpack (&gt;= 4.2.0, &lt; 5.3)
+    railties (&gt;= 4.2.0, &lt; 5.3)
+  reverse_markdown (1.1.0)
+    nokogiri
+  rmagick (2.16.0)
+  rubocop (0.55.0)
+    parallel (~&gt; 1.10)
+    parser (&gt;= 2.5)
+    powerpack (~&gt; 0.1)
+    rainbow (&gt;= 2.2.2, &lt; 4.0)
+    ruby-progressbar (~&gt; 1.7)
+    unicode-display_width (~&gt; 1.0, &gt;= 1.0.1)
+  ruby-progressbar (1.9.0)
+  ruby_dep (1.5.0)
+  rubyzip (1.2.1)
+  sass (3.5.6)
+    sass-listen (~&gt; 4.0.0)
+  sass-listen (4.0.0)
+    rb-fsevent (~&gt; 0.9, &gt;= 0.9.4)
+    rb-inotify (~&gt; 0.9, &gt;= 0.9.7)
+  sass-rails (5.0.7)
+    railties (&gt;= 4.0.0, &lt; 6)
+    sass (~&gt; 3.1)
+    sprockets (&gt;= 2.8, &lt; 4.0)
+    sprockets-rails (&gt;= 2.0, &lt; 4.0)
+    tilt (&gt;= 1.1, &lt; 3)
+  searchkick (3.0.3)
+    activemodel (&gt;= 4.2)
+    elasticsearch (&gt;= 5)
+    hashie
+  seed_dump (3.3.0)
+    activerecord (&gt;= 4)
+    activesupport (&gt;= 4)
+  selenium-webdriver (3.11.0)
+    childprocess (~&gt; 0.5)
+    rubyzip (~&gt; 1.2)
+  sinatra (2.0.1)
+    mustermann (~&gt; 1.0)
+    rack (~&gt; 2.0)
+    rack-protection (= 2.0.1)
+    tilt (~&gt; 2.0)
+  solargraph (0.20.0)
+    bundler (~&gt; 1.14)
+    coderay (~&gt; 1.1)
+    eventmachine (~&gt; 1.2, &gt;= 1.2.5)
+    htmlentities (~&gt; 4.3, &gt;= 4.3.4)
+    kramdown
+    parser (~&gt; 2.4)
+    reverse_markdown (~&gt; 1.0, &gt;= 1.0.5)
+    rubocop (~&gt; 0.52)
+    sinatra (~&gt; 2)
+    thor (~&gt; 0.19, &gt;= 0.19.4)
+    yard (~&gt; 0.9)
+  spring (2.0.2)
+    activesupport (&gt;= 4.2)
+  spring-watcher-listen (2.0.1)
+    listen (&gt;= 2.7, &lt; 4.0)
+    spring (&gt;= 1.2, &lt; 3.0)
+  sprockets (3.7.1)
+    concurrent-ruby (~&gt; 1.0)
+    rack (&gt; 1, &lt; 3)
+  sprockets-rails (3.2.1)
+    actionpack (&gt;= 4.0)
+    activesupport (&gt;= 4.0)
+    sprockets (&gt;= 3.0.0)
+  sqlite3 (1.3.13)
+  temple (0.8.0)
+  thor (0.20.0)
+  thread_safe (0.3.6)
+  tilt (2.0.8)
+  turbolinks (5.1.1)
+    turbolinks-source (~&gt; 5.1)
+  turbolinks-source (5.1.0)
+  tzinfo (1.2.5)
+    thread_safe (~&gt; 0.1)
+  uglifier (4.1.10)
+    execjs (&gt;= 0.3.0, &lt; 3)
+  unicode-display_width (1.3.2)
+  warden (1.2.7)
+    rack (&gt;= 1.0)
+  web-console (3.6.2)
+    actionview (&gt;= 5.0)
+    activemodel (&gt;= 5.0)
+    bindex (&gt;= 0.4.0)
+    railties (&gt;= 5.0)
+  websocket-driver (0.6.5)
+    websocket-extensions (&gt;= 0.1.0)
+  websocket-extensions (0.1.3)
+  xpath (3.0.0)
+    nokogiri (~&gt; 1.8)
+  yard (0.9.12)</pre>
+
+<p>PLATFORMS</p>
+
+<pre class="ruby"><span class="ruby-identifier">ruby</span>
+</pre>
+
+<p>DEPENDENCIES</p>
+
+<pre>autoprefixer-rails (~&gt; 8.0)
+better_errors
+binding_of_caller
+bootstrap (~&gt; 4.0.0)
+bootstrap-datepicker-rails
+byebug
+capybara (~&gt; 2.13)
+carrierwave
+coffee-rails (~&gt; 4.2)
+devise (~&gt; 4.2)
+figaro
+fog-aws
+font-awesome-rails
+font-awesome-sass
+friendly_id (~&gt; 5.2, &gt;= 5.2.3)
+gmap_coordinates_picker
+jbuilder (~&gt; 2.5)
+jquery-rails
+listen (&gt;= 3.0.5, &lt; 3.2)
+pg
+puma (~&gt; 3.7)
+rails (~&gt; 5.1.5)
+rails_admin
+rmagick
+sass-rails (~&gt; 5.0)
+searchkick
+seed_dump
+selenium-webdriver
+solargraph
+spring
+spring-watcher-listen (~&gt; 2.0.0)
+sqlite3
+turbolinks (~&gt; 5)
+tzinfo-data
+uglifier (&gt;= 1.3.0)
+web-console (&gt;= 3.3.0)</pre>
+
+<p>BUNDLED WITH</p>
+
+<pre>1.16.1</pre>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.0.4.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
