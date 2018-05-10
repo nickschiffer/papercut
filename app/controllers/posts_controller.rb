@@ -37,7 +37,7 @@ class PostsController < ApplicationController
   def books
     search = params[:term].present? ? params[:term] : nil
     @allbooks = if search
-      Book.where(["(title LIKE ? OR author LIKE ? OR ISBN LIKE ? ) AND visibility = 't'", "%#{search}%", "%#{search}%", search])
+      Book.where(["(title LIKE ? OR author LIKE ? OR isbn LIKE ? ) AND visibility = 't'", "%#{search}%", "%#{search}%", search])
     else
       @allbooks = Book.where("visibility = 't'")
     end
